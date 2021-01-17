@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
+  m_Name: Come-Pedras 3
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: b450edb9f48fc5e4bb456650c646b226, type: 3}
+  id: 11
+  idPersonagem: 3
+  AtaqueForte: 06000000
+  "AtaqueR\xE1pido": 04000000
+  Bloqueio: 0b0000000b0000000f000000
+  Esquiva: 0d000000
+  Vida: 0
+  Ataque: 0
+  Defesa: 0
+  act: 1
+  mov: 1

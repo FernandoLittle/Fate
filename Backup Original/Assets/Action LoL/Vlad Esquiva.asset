@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
+  m_Name: Vlad Esquiva
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 811d410fe8dfd0f4091072bf1f8e4e84, type: 3}
+  id: 18
+  Texto0: 'Passive: -10 Power (min 18). Passive: Deals 1 damage to yourself.  Victory:
+    Deals 3 true damage.'
+  Texto0br: "2- Passivo: Os efeitos de acerto do seu ataque s\xE3o negados. 3- Passivo:
+    Causa 3 de dano verdadeiro."
+  scale: 6
+  IAturn: 1

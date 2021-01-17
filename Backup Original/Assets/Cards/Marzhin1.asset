@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
+  m_Name: Marzhin1
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 112f48e29b13d714eb06b9282271cf75, type: 3}
+  id: 18
+  idPersonagem: 6
+  AtaqueForte: 140000000a00000012000000
+  "AtaqueR\xE1pido": 0a0000001100000012000000
+  Bloqueio: 050000000a0000000e000000
+  Esquiva: 0400000005000000
+  Vida: 13
+  Ataque: 0
+  Defesa: 0
+  act: 1
+  mov: 1

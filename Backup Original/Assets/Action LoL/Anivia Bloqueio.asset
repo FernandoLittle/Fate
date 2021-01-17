@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
+  m_Name: Anivia Bloqueio
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: bd600391767a1fe4386a6cbdfef037c0, type: 3}
+  id: 17
+  Texto0: 'Passive: -2 Opponent Level (min 4). Victory: Opponents cannot attack Anivia
+    until the end of the round.'
+  Texto0br: "3- Passivo: Oponentes n\xE3o podem atacar Anivia at\xE9 o final da rodada."
+  scale: 9
+  IAturn: 3

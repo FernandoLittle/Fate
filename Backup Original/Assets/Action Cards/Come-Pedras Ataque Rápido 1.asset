@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
+  m_Name: "Come-Pedras Ataque R\xE1pido 1"
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: e3b72b1a2ee36f74b886b106fe6f0d88, type: 3}
+  id: 4
+  Texto0: '3 - Hit: Increases all your attributes permanently by 1. Regenerates 3
+    life. 4- Deals damage equal to your attack.'
+  Texto1: 
+  Texto2: 
+  Texto3: '3 - Hit: Aumenta todos os seus atributos permanentemente em 1. Regenera
+    3 de vida.'
+  Texto4: 4- Deals damage equal to your attack.
+  Texto0br: '3 - Hit: Aumenta todos os seus atributos permanentemente em 1. Regenera
+    3 de vida. 4- Causa dano igual ao seu ataque.'
+  Texto1br: 
+  Texto2br: 
+  Texto3br: '3 - Hit: Aumenta todos os seus atributos permanentemente em 1. Regenera
+    3 de vida.'
+  Texto4br: 4- Causa dano igual ao seu ataque.
