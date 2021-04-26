@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Fiora Bloqueio
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d0b4c11c9a16f6c4e941225aca841061, type: 3}
+  sprite: {fileID: 21300000, guid: 688bdd5a9e97bcd409d9702cfe3a044b, type: 3}
   id: 20
   Texto0: 'Passive: Duelist: + 1 Defense. Victory: Deals 1 true damage and reduces
     enemy mana by 1. If you use all your mana, reduce 3 mana instead.'

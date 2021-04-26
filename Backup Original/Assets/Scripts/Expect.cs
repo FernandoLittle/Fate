@@ -11,14 +11,14 @@ public class Expect : MonoBehaviour
     public Text AttackCE;
     public Text LVCE;
     public Text LevelCE;
-    public int LevelA;
-    public int LvA;
-    public int OriginalLvA;
-    public int OriginalLevelA;
-    public int LevelE;
-    public int LvE;
-    public int OriginalLvE;
-    public int OriginalLevelE;
+    public int ManaA;
+    public int ManaSpendA;
+    public int OriginalManaSpendA;
+    public int OriginalManaA;
+    public int ManaE;
+    public int ManaSpendE;
+    public int OriginalManaSpendE;
+    public int OriginalManaE;
     public int ScaleA;
     public int ScaleE;
     public int Win;
@@ -46,24 +46,24 @@ public class Expect : MonoBehaviour
     }
     public void CalculusTextA()
     {
-        LVCA.text = OriginalLvA.ToString();
-        LevelCA.text = OriginalLevelA.ToString();
-        AttackCA.text = (OriginalLvA * ScaleA).ToString();
+        LVCA.text = OriginalManaSpendA.ToString();
+        LevelCA.text = OriginalManaA.ToString();
+        AttackCA.text = (OriginalManaSpendA * ScaleA).ToString();
     }
     public void CalculusTextE()
     {
-        LVCE.text = OriginalLvE.ToString();
-        LevelCE.text = OriginalLevelE.ToString();
-        AttackCE.text = (OriginalLvE * ScaleE).ToString();
+        LVCE.text = OriginalManaSpendE.ToString();
+        LevelCE.text = OriginalManaE.ToString();
+        AttackCE.text = (OriginalManaSpendE * ScaleE).ToString();
     }
     public void A()
     {
 
-        if (LvA >= OriginalLvA)
+        if (ManaSpendA >= OriginalManaSpendA)
         {
             CalculusTextA();
-            OriginalLvA += 1;
-            OriginalLevelA -= 1;
+            OriginalManaSpendA += 1;
+            OriginalManaA -= 1;
             Invoke("A", 0.3f);
         }
         else
@@ -74,11 +74,11 @@ public class Expect : MonoBehaviour
     public void B()
     {
 
-        if (LvE >= OriginalLvE)
+        if (ManaSpendE >= OriginalManaSpendE)
         {
             CalculusTextE();
-            OriginalLvE += 1;
-            OriginalLevelE -= 1;
+            OriginalManaSpendE += 1;
+            OriginalManaE -= 1;
             Invoke("B", 0.3f);
         }
         else
@@ -91,8 +91,8 @@ public class Expect : MonoBehaviour
     }
     public void Victory()
     {
-        AttackA = LvA * ScaleA;
-        AttackE = LvE * ScaleE;
+        AttackA = ManaSpendA * ScaleA;
+        AttackE = ManaSpendE * ScaleE;
         AttackAE[0] = AttackA;
         AttackAE[1] = AttackE;
         Combat.AttackChangeEffects();
@@ -111,18 +111,33 @@ public class Expect : MonoBehaviour
         }
         if (AttackA == AttackE)
         {
-            if(o.NexusE.id * o.NexusE.side < 0)
+            if (o.AA.offline == true)
             {
-                Order = 1;
+                if (o.NexusE.id * o.NexusE.side > 0)
+                {
+                    Order = 1;
+                }
+                else
+                {
+                    Order = 0;
+                }
+                Win = Order;
             }
             else
             {
-                Order = 0;
+                if (o.AA.Atacante == true)
+                {
+                    Win = 1;
+                }
+                else
+                {
+                    Win = 0;
+                }
+                    
             }
-                
             
 
-            Win = Order;
+
         }
         Combat.Win = Win;
    

@@ -41,5 +41,48 @@ public class Generic : MonoBehaviour
             return a;
         }
     }
-   
+   public int MirrorConversor(int zone){
+        if (zone == 1)
+        {
+            return 4;
+        }
+        if (zone == 2)
+        {
+            return 5;
+        }
+        if (zone == 3)
+        {
+            return 6;
+        }
+        if (zone == 4)
+        {
+            return 1;
+        }
+        if (zone == 5)
+        {
+            return 2;
+        }
+        if (zone == 6)
+        {
+            return 3;
+        }
+        if (zone == 7)
+        {
+            return 9;
+        }
+        if (zone == 8)
+        {
+            return 10;
+        }
+        if (zone == 9)
+        {
+            return 7;
+        }
+        else
+        {
+            return 8;
+        }
+
+
+    }
 }

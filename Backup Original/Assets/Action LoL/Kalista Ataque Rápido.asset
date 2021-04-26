@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: "Kalista Ataque R\xE1pido"
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bfd9c43bc45e3144792a264e76a58cf3, type: 3}
+  sprite: {fileID: 21300000, guid: 17a09beb5a00ed14f9a50f31a162c892, type: 3}
   id: 21
-  Texto0: 'Passive: Pact: +1 Level. Victory: Deals 8 damage. If you use all your mana,
-    deals 10 damage instead.'
+  Texto0: 'Passive: Pact: +1 Level. Victory: Deals 8 damage. If you use all your
+    mana, deals 10 damage instead.'
   Texto0br: "4- Acerto: Remove todos os contadores de lan\xE7a do oponente e causa
     3 de dano verdadeiro mais 3 de dano para cada contador removido. Se 3 contadores
     ou mais forem removidos o oponente morre."

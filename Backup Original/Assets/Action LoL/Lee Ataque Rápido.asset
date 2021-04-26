@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: "Lee Ataque R\xE1pido"
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 902fa74d2d9b7ec45a452db04fc0f97f, type: 3}
+  sprite: {fileID: 21300000, guid: 1d66fcfc56517664d9ec0b343fdb1c6d, type: 3}
   id: 23
   Texto0: 'Passive: Aggro: +2 Level. Victory: Deals damage equal to your attack and
     deals damage equal to your attack on the opponent''s nexus.'

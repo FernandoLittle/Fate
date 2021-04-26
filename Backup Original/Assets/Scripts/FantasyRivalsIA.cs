@@ -9,8 +9,8 @@ public class FantasyRivalsIA : MonoBehaviour
     public int Selector;
     public int SelectorAlly; 
     public int SelectorMana;
-    public int LevelA;
-    public int LevelE;
+    public int ManA;
+    public int ManE;
     public Combat Combat;
     public D D;
     public Expect Expect;
@@ -93,9 +93,9 @@ public class FantasyRivalsIA : MonoBehaviour
         
         SelectMana();
         Combat.SkillIDE = Selector+1;
-        Expect.OriginalLevelE = LevelE;
-        Expect.LvE = SelectorMana;
-        Expect.OriginalLvE = 0;
+        Expect.OriginalManaE = ManE;
+        Expect.ManaSpendE = SelectorMana;
+        Expect.OriginalManaSpendE = 0;
        
 
     }

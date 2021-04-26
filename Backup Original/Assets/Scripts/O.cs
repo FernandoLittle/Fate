@@ -43,7 +43,7 @@ public class O : MonoBehaviour
 
         //a*=-1;
         //if (a == 1)
-        if (Q.a.Count == 0)
+        if (Q.a.Count == 0 && AA.offline==true)
         {
             Debug.Log("A");
 

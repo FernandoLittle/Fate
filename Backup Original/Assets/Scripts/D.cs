@@ -116,16 +116,32 @@ public class D : MonoBehaviour
 
     public List<RectTransform> Size;
     public List<RectTransform> SizeM;
+    public List<GameObject> ScaleM;
+    public Text ManaAT;
+    public Text ManaET;
+
     // Start is called before the first frame update
     private void OnEnable()
     {
+        Combat.NoRepeatKey = false;
+        Combat.AllyConfirm = false;
+        Combat.EnemyConfirm = false;
+
+        //ManaAT.text = Combat.ManaA.ToString();
+        //ManaET.text = Combat.ManaE.ToString();
         a.DisableA(false);
         DisableA(false);
         PowerMod.SetActive(false);
         PowerMod1.SetActive(false);
         Normalizator();
         a.Normalizator();
-        if (Attacking == 1)
+        for (int x = 0; x < 8; x = x + 1)
+        {
+            ScaleM[x].SetActive(true);
+        }
+
+
+            if (Attacking == 1)
         {
             Skills[0].SetActive(true);
             Skills[1].SetActive(true);
@@ -158,8 +174,8 @@ public class D : MonoBehaviour
             Blue[1].SetActive(false);
 
         }
-        Combat.LvA = 0;
-        Combat.LvE = 0;
+        Combat.ManaSpendA = 0;
+        Combat.ManaSpendE = 0;
 
         if (Tuto.tf == 1)
         {
@@ -186,7 +202,15 @@ public class D : MonoBehaviour
        */
         Ally = PlayerPrefs.GetInt("A");
         Enemy = PlayerPrefs.GetInt("A1");
-        Enemy *= -1;
+        if (Ally < 0)
+        {
+            Ally *= -1;
+        }
+        if (Enemy < 0)
+        {
+            Enemy *= -1;
+        }
+        
         //summ = PlayerPrefs.GetInt("Rift");
         //Rift.sprite = s[summ];
         Rift1.sprite = FantasyBack;
@@ -202,7 +226,7 @@ public class D : MonoBehaviour
 
 
         L[0].at[5] = Zone[p1].Mana;
-        Combat.LevelA= Zone[p1].Mana;
+        Combat.ManaA= Zone[p1].Mana;
         FantasyRivalsIA.TotalManaA = Zone[p1].Mana;
 
         L[1].at[0] = Zone[p2].Lyoko[0];
@@ -212,7 +236,7 @@ public class D : MonoBehaviour
 
 
         L[1].at[5] = Zone[p2].Mana;
-        Combat.LevelE = Zone[p2].Mana;
+        Combat.ManaE = Zone[p2].Mana;
         FantasyRivalsIA.TotalManaE = Zone[p2].Mana;
 
 

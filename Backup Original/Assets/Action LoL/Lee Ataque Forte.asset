@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Lee Ataque Forte
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: de57684318d659545b4c1e7aa32f8899, type: 3}
+  sprite: {fileID: 21300000, guid: 3e425c04abaef0d449e5ac62bb9740ea, type: 3}
   id: 26
   Texto0: 'Passive: Aggro: +4 Power. Victory: Deals damage equal to your attack twice.'
   Texto0br: '4- Acerto: Causa dano igual ao seu ataque duas vezes.'

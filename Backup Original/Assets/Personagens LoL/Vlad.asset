@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
   m_Name: Vlad
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 7c208186c6e9c1248b518c0e6e6e2468, type: 3}
-  sprite1: {fileID: 21300000, guid: 8eba116995dc66b4d8711deb8c4378fd, type: 3}
+  sprite: {fileID: 21300000, guid: b450edb9f48fc5e4bb456650c646b226, type: 3}
+  sprite1: {fileID: 21300000, guid: b450edb9f48fc5e4bb456650c646b226, type: 3}
   id: 24
   idPersonagem: 0
   AtaqueForte: 19000000
   "AtaqueR\xE1pido": 16000000
-  Bloqueio: 15000000
+  Bloqueio: 16000000
   Esquiva: 12000000
   Vida: 15
   Ataque: 3
@@ -28,5 +28,5 @@ MonoBehaviour:
   Level: 9
   Passive: Whenever I deal damage with an ability, I regenerate health equal to the
     damage dealt.
-  Passivebr: Sempre que eu causo dano com uma habilidade, eu regenero vida igual ao
-    dano causado.
+  Passivebr: Sempre que eu causo dano com uma habilidade, eu regenero vida igual
+    ao dano causado.

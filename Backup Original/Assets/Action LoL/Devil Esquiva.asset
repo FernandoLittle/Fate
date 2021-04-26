@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Devil Esquiva
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c933b8c1f60eeb7448e9488e75849476, type: 3}
+  sprite: {fileID: 21300000, guid: 75156a3a0db93254199f6ace9bcfffdb, type: 3}
   id: 15
   Texto0: 'Passive: Ambush: +2 Defense. Victory: Increase your attack by two.'
   Texto0br: '3- Acerto: Aumente seu ataque em dois.'

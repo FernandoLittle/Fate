@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Fiora Esquiva
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 59932413da480694ba0da0b9f78c9333, type: 3}
+  sprite: {fileID: 21300000, guid: 9eb882c8b5005de4190390e819bee88a, type: 3}
   id: 20
   Texto0: 'Passive: Duelist: + 5 Power. Victory: Deals 2 true damage.'
   Texto0br: '3- Acerto: Causa 1 de dano verdadeiro e reduz a velocidade inimiga em

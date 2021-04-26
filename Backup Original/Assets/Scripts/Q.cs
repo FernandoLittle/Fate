@@ -166,10 +166,21 @@ public class Q : MonoBehaviour
                 IA = false;
             }
             Joker.SetActive(false);
-            if (o.NexusE.id * o.NexusE.side >= 0)
+            if (AA.offline == true)
             {
-                AA.DisableA(false);
+                if (o.NexusE.id * o.NexusE.side >= 0)
+                {
+                    AA.DisableA(false);
+                }
             }
+            else
+            {
+                if (AA.Atacante == true)
+                {
+                    AA.DisableA(false);
+                }
+            }
+
             
         }
         

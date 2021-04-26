@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Devil Ataque Forte
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: b1695d45d21f6ea4687cb73675a5c2b7, type: 3}
+  sprite: {fileID: 21300000, guid: e287a20f31a9c5c4c8eb9bcc5ad5fa2f, type: 3}
   id: 22
   Texto0: 'Passive: Ambush: -20 Opponent Power (min 23). Victory: Deals damage equal
     to the attack. Until the end of the round, at the end of each turn, the opponent
     takes 1 true damage.'
-  Texto0br: "4- Acerto: Causa dano igual ao ataque. At\xE9 o final da rodada, no final
-    de cada turno, o oponente recebe dois de dano verdadeiro."
+  Texto0br: "4- Acerto: Causa dano igual ao ataque. At\xE9 o final da rodada, no
+    final de cada turno, o oponente recebe dois de dano verdadeiro."
   scale: 6
   IAturn: 4

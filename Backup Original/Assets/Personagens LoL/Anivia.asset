@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
   m_Name: Anivia
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5fb15f5649f5a5442bd3e94e8b1d9618, type: 3}
-  sprite1: {fileID: 21300000, guid: 3255083f759e7d44394d57daa30d614f, type: 3}
+  sprite: {fileID: 21300000, guid: fbd94da487709f54cb997bd2c8cdf614, type: 3}
+  sprite1: {fileID: 21300000, guid: fbd94da487709f54cb997bd2c8cdf614, type: 3}
   id: 22
   idPersonagem: 0
   AtaqueForte: 17000000
@@ -26,7 +26,7 @@ MonoBehaviour:
   act: 2
   mov: 2
   Level: 8
-  Passive: The first time I die in the duel, I become Eggnivia. At the end of the
-    round, if I am transformed into Eggnivia I will reborn as Anivia again.
+  Passive: No effect
   Passivebr: 'Na primeira vez que eu morrer na partidade, eu me transformo em Eggnivia.
-    No fim do round, se eu estiver trasformada em Eggnivia eu revivo como Anivia novamente. '
+    No fim do round, se eu estiver trasformada em Eggnivia eu revivo como Anivia
+    novamente. '

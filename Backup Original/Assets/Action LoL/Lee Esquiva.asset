@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Lee Esquiva
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 36dab599433ff8c46958794780ed8147, type: 3}
+  sprite: {fileID: 21300000, guid: 543796ccc1f03a3479e257bd9b0985bb, type: 3}
   id: 19
   Texto0: 'Passive: Aggro: +2 Defense. Victory: Increase your defense and the defense
     of a random ally by 2.'
-  Texto0br: "3- Passivo: Aumente sua defesa e a defesa de um aliado aleat\xF3rio em
-    2."
+  Texto0br: "3- Passivo: Aumente sua defesa e a defesa de um aliado aleat\xF3rio
+    em 2."
   scale: 6
   IAturn: 4

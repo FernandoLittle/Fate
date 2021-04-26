@@ -1052,6 +1052,21 @@ public class F : MonoBehaviour
 
 
 
+
+            }
+            if (x30 == 22)//VladB
+            {
+                if (Win == 1)
+                {
+                    TrueDamage(1);
+                }
+            }
+            if (x30 == 23)//TeemoB
+            {
+                if (Win == 1)
+                {
+                    TrueDamage(1);
+                }
             }
 
 

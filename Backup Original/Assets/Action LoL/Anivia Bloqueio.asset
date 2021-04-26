@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Anivia Bloqueio
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bd600391767a1fe4386a6cbdfef037c0, type: 3}
+  sprite: {fileID: 21300000, guid: 50bb9d6cc50b64f4f92f3adc0eb75a92, type: 3}
   id: 17
   Texto0: 'Passive: -2 Opponent Level (min 4). Victory: Opponents cannot attack Anivia
     until the end of the round.'

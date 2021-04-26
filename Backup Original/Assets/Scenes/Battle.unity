@@ -1541,6 +1541,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!95 &33900970
 Animator:
   serializedVersion: 3
@@ -2058,10 +2064,11 @@ RectTransform:
   - {fileID: 1765015042}
   - {fileID: 1788298232}
   - {fileID: 570728145}
-  - {fileID: 296746111}
   - {fileID: 402076384}
   - {fileID: 1802089159}
   - {fileID: 667935637}
+  - {fileID: 296746111}
+  - {fileID: 1836360341}
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.732, y: 0, z: 0}
@@ -3870,6 +3877,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb944838e8b6ca645a82083c3a7e0bd6, type: 2}
   - {fileID: 11400000, guid: 0796dc2927f552b408710204d3c0315c, type: 2}
   - {fileID: 11400000, guid: 9c969e09a2767e3438ea74eb59e4e87d, type: 2}
+  - {fileID: 11400000, guid: 9a2c7dfffd384214b83e0c6c43505512, type: 2}
+  - {fileID: 11400000, guid: c32d5d4edcd27cd43a44aa919aa25463, type: 2}
   a4: 0
   a41: 0
   Fight: {fileID: 724371830}
@@ -3989,6 +3998,17 @@ MonoBehaviour:
   - {fileID: 1723596441}
   - {fileID: 23966638}
   - {fileID: 1407028888}
+  ScaleM:
+  - {fileID: 831818502}
+  - {fileID: 45509254}
+  - {fileID: 173102283}
+  - {fileID: 889405848}
+  - {fileID: 605106660}
+  - {fileID: 32768979}
+  - {fileID: 1956597454}
+  - {fileID: 1502696841}
+  ManaAT: {fileID: 576832806}
+  ManaET: {fileID: 1821801381}
 --- !u!114 &139903209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4195,11 +4215,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Recall
+  m_Text: '
 
-
-    At the beginning of the last turn of this round, regenerate
-    2 health of all allies.'
+    At the beginning of the last turn of this round, regenerate 2 health
+    of all allies.'
 --- !u!222 &157268981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4376,8 +4395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 164.2, y: 136.2}
-  m_SizeDelta: {x: 78.42, y: 78.42}
+  m_AnchoredPosition: {x: 166.7, y: 130.81}
+  m_SizeDelta: {x: 65.01457, y: 75.00293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164684891
 MonoBehaviour:
@@ -4399,7 +4418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7047625f5c828034b8d0a012f6194925, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e89367e9fae3d6d47917a7efde120d27, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4777,6 +4796,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &176419645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7114,7 +7139,7 @@ Transform:
   - {fileID: 164684890}
   - {fileID: 722268289}
   m_Father: {fileID: 50725629}
-  m_RootOrder: 30
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301941190
 GameObject:
@@ -9275,7 +9300,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 50725629}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9975,6 +10000,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!95 &408715117
 Animator:
   serializedVersion: 3
@@ -10064,7 +10095,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0.3
+  m_Text: 0.1
 --- !u!222 &409529061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10329,8 +10360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 384, y: -144}
-  m_SizeDelta: {x: 522.7, y: 518.9}
+  m_AnchoredPosition: {x: 553, y: -135}
+  m_SizeDelta: {x: 399.08752, y: 526.16785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416258317
 MonoBehaviour:
@@ -10352,7 +10383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2ada4261070220439d69159dc91e617, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93e7d0e5ac2a525439582b94425c474e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10655,11 +10686,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Split Push
+  m_Text: '
 
 
-    When a ally  champion dies, deal 8 damage to the enemy
-    nexus.'
+    When a ally  champion dies, deal 8 damage to the enemy nexus.'
 --- !u!222 &428726819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11460,6 +11490,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &452117193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12951,6 +12987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515616630}
   - component: {fileID: 515616629}
+  - component: {fileID: 515616631}
   m_Layer: 5
   m_Name: A
   m_TagString: Untagged
@@ -13255,6 +13292,7 @@ MonoBehaviour:
   - {fileID: 727708315}
   - {fileID: 1434020350}
   - {fileID: 1335801424}
+  F: {fileID: 2060266653}
   DamageTA: {fileID: 1500650868}
   DamageTE: {fileID: 657081621}
   Round: {fileID: 1676093973}
@@ -13352,6 +13390,14 @@ MonoBehaviour:
   - {fileID: 864509682}
   - {fileID: 1946140983}
   - {fileID: 1146593336}
+  e: {fileID: 583175353}
+  e1: {fileID: 1336475373}
+  e2: {fileID: 1336475373}
+  offline: 0
+  Generic: {fileID: 1146895281}
+  test: {fileID: 1836360342}
+  testint: 0
+  Atacante: 0
 --- !u!224 &515616630
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13371,6 +13417,28 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 225.1497}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &515616631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515616628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &515877814
 GameObject:
   m_ObjectHideFlags: 0
@@ -13385,7 +13453,7 @@ GameObject:
   - component: {fileID: 515877817}
   - component: {fileID: 515877816}
   m_Layer: 0
-  m_Name: Fight
+  m_Name: FightTrue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15265,7 +15333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3999863, y: -25.099976}
+  m_AnchoredPosition: {x: -0.10003662, y: -19.709976}
   m_SizeDelta: {x: 203.52, y: 288.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573868550
@@ -15670,6 +15738,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!95 &573974046
 Animator:
   serializedVersion: 3
@@ -15999,13 +16073,14 @@ GameObject:
   - component: {fileID: 583175355}
   - component: {fileID: 583175354}
   - component: {fileID: 583175353}
+  - component: {fileID: 583175357}
   m_Layer: 5
   m_Name: Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &583175352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16194,6 +16269,14 @@ MonoBehaviour:
   Tuto1: {fileID: 0}
   d: {fileID: 0}
   Level: 0
+  MasterE: {fileID: 583175353}
+  MasterE2: {fileID: 1336475373}
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &583175354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16201,7 +16284,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583175351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -16268,7 +16351,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583175351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -16299,6 +16382,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583175351}
   m_CullTransparentMesh: 0
+--- !u!114 &583175357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583175351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &592603920
 GameObject:
   m_ObjectHideFlags: 0
@@ -16808,7 +16913,7 @@ RectTransform:
   m_LocalScale: {x: 1.4234875, y: 1.4234875, z: 1.4234875}
   m_Children: []
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17025,14 +17130,14 @@ MonoBehaviour:
   AttackCE: {fileID: 971532321}
   LVCE: {fileID: 1400251265}
   LevelCE: {fileID: 1821801381}
-  LevelA: 0
-  LvA: 0
-  OriginalLvA: 0
-  OriginalLevelA: 0
-  LevelE: 0
-  LvE: 0
-  OriginalLvE: 0
-  OriginalLevelE: 0
+  ManaA: 0
+  ManaSpendA: 0
+  OriginalManaSpendA: 0
+  OriginalManaA: 0
+  ManaE: 0
+  ManaSpendE: 0
+  OriginalManaSpendE: 0
+  OriginalManaE: 0
   ScaleA: 0
   ScaleE: 0
   Win: 0
@@ -17537,7 +17642,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18471,7 +18576,7 @@ RectTransform:
   m_LocalScale: {x: 1.4234875, y: 1.4234875, z: 1.4234875}
   m_Children: []
   m_Father: {fileID: 50725629}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18949,7 +19054,7 @@ Transform:
   - {fileID: 804822332}
   - {fileID: 49030519}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &686891085
 MonoBehaviour:
@@ -20261,8 +20366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 271.3, y: 136.2}
-  m_SizeDelta: {x: 78.42, y: 78.42}
+  m_AnchoredPosition: {x: 272.97, y: 130.12}
+  m_SizeDelta: {x: 66.442825, y: 76.924774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722268290
 MonoBehaviour:
@@ -20284,7 +20389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e48b9b4f29c37a489c5bd2053ceb0cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea20d88df1bfe8b40b91ebd28c6a8d68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20572,7 +20677,7 @@ GameObject:
   - component: {fileID: 724371832}
   - component: {fileID: 724371835}
   m_Layer: 5
-  m_Name: Fight
+  m_Name: FightDepreciate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22189,6 +22294,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &757031342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23150,12 +23261,12 @@ GameObject:
   - component: {fileID: 786965045}
   - component: {fileID: 786965044}
   m_Layer: 5
-  m_Name: Text
+  m_Name: FightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &786965043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23463,7 +23574,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26081,8 +26192,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 972341555}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LvDown
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: MANADOWN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28019,6 +28130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972341554}
   - component: {fileID: 972341555}
+  - component: {fileID: 972341556}
   m_Layer: 5
   m_Name: Fantasy Rivals Controller
   m_TagString: Untagged
@@ -28035,14 +28147,14 @@ RectTransform:
   m_GameObject: {fileID: 972341553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0356264, y: 2.0356264, z: 2.0356264}
+  m_LocalScale: {x: 1.1246836, y: 1.1246836, z: 1.1246836}
   m_Children: []
-  m_Father: {fileID: 1970069834}
-  m_RootOrder: 15
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 101, y: -78.8}
+  m_AnchoredPosition: {x: 257.31284, y: 75.25488}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972341555
@@ -28059,16 +28171,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackA: 0
   AttackE: 0
-  LvA: 0
-  LvE: 0
+  ManaSpendA: 0
+  ManaSpendE: 0
   ScaleA: 0
   ScaleE: 0
-  LvAT: {fileID: 748521783}
+  ManaSpendT: {fileID: 748521783}
   AttackAT: {fileID: 1392280815}
-  LevelA: 0
-  LevelE: 0
-  LevelAT: {fileID: 576832806}
-  LevelET: {fileID: 1821801381}
+  ManaA: 0
+  ManaE: 0
+  ManaAT: {fileID: 576832806}
+  ManaET: {fileID: 1821801381}
   FightAN:
   - {fileID: 1596122858}
   - {fileID: 147069738}
@@ -28108,10 +28220,10 @@ MonoBehaviour:
   - {fileID: 525988966}
   AttackCA: {fileID: 406690}
   ScaleCA: {fileID: 760855810}
-  LVCA: {fileID: 1755954628}
+  ManaCA: {fileID: 1755954628}
   AttackCE: {fileID: 971532321}
   ScaleCE: {fileID: 1302743497}
-  LVCE: {fileID: 1400251265}
+  ManaCE: {fileID: 1400251265}
   Expect: {fileID: 623060747}
   FantasyRivalsIA: {fileID: 984162963}
   anime:
@@ -28142,6 +28254,31 @@ MonoBehaviour:
   k: 0
   k0: 0
   A: {fileID: 515616629}
+  AllyConfirm: 0
+  EnemyConfirm: 0
+  NoRepeatKey: 0
+--- !u!114 &972341556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972341553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 5
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &974263631
 GameObject:
   m_ObjectHideFlags: 0
@@ -28326,8 +28463,8 @@ MonoBehaviour:
   Selector: 0
   SelectorAlly: 0
   SelectorMana: 0
-  LevelA: 0
-  LevelE: 0
+  ManA: 0
+  ManE: 0
   Combat: {fileID: 972341555}
   D: {fileID: 139903208}
   Expect: {fileID: 623060747}
@@ -28478,6 +28615,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 0}
+  MovI: {fileID: 0}
+  MovT: {fileID: 0}
+  FightB: {fileID: 0}
+  FightI: {fileID: 0}
+  FightT: {fileID: 0}
 --- !u!114 &984257799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31334,6 +31477,14 @@ MonoBehaviour:
   Tuto1: {fileID: 0}
   d: {fileID: 0}
   Level: 0
+  MasterE: {fileID: 583175353}
+  MasterE2: {fileID: 1336475373}
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1104932532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32673,7 +32824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1152011397
 GameObject:
@@ -33417,6 +33568,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1186421313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33541,8 +33698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.6, y: -306}
-  m_SizeDelta: {x: 813.8, y: 504.4}
+  m_AnchoredPosition: {x: -20.2, y: -306}
+  m_SizeDelta: {x: 1078.4841, y: 504.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189412889
 MonoBehaviour:
@@ -35380,6 +35537,14 @@ MonoBehaviour:
   Tuto1: {fileID: 0}
   d: {fileID: 0}
   Level: 0
+  MasterE: {fileID: 583175353}
+  MasterE2: {fileID: 1336475373}
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1280620940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36460,13 +36625,14 @@ GameObject:
   - component: {fileID: 1336475371}
   - component: {fileID: 1336475370}
   - component: {fileID: 1336475373}
+  - component: {fileID: 1336475374}
   m_Layer: 5
   m_Name: Fight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1336475369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36561,7 +36727,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336475368}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -36758,6 +36924,36 @@ MonoBehaviour:
   Tuto1: {fileID: 2060284228}
   d: {fileID: 139903208}
   Level: 0
+  MasterE: {fileID: 583175353}
+  MasterE2: {fileID: 1336475373}
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 0}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
+--- !u!114 &1336475374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336475368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1341993899
 GameObject:
   m_ObjectHideFlags: 0
@@ -37120,7 +37316,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38187,7 +38383,7 @@ Transform:
   - {fileID: 200965605}
   - {fileID: 2142643059}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377564311
 GameObject:
@@ -38719,8 +38915,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 972341555}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LvUp
+        m_TargetAssemblyTypeName: Combat, Assembly-CSharp
+        m_MethodName: MANAUP
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40479,6 +40675,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 0}
+  MovI: {fileID: 0}
+  MovT: {fileID: 0}
+  FightB: {fileID: 0}
+  FightI: {fileID: 0}
+  FightT: {fileID: 0}
 --- !u!114 &1515513011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40645,12 +40847,12 @@ GameObject:
   - component: {fileID: 1520718186}
   - component: {fileID: 1520718185}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1520718184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40874,6 +41076,14 @@ MonoBehaviour:
   Tuto1: {fileID: 0}
   d: {fileID: 0}
   Level: 0
+  MasterE: {fileID: 583175353}
+  MasterE2: {fileID: 1336475373}
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1523905484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41090,7 +41300,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42317,7 +42527,7 @@ RectTransform:
   - {fileID: 1392280814}
   - {fileID: 748521785}
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42533,8 +42743,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.7, y: 136.2}
-  m_SizeDelta: {x: 78.42, y: 78.42}
+  m_AnchoredPosition: {x: 56.91, y: 130.27}
+  m_SizeDelta: {x: 64.454834, y: 75.65961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622788678
 MonoBehaviour:
@@ -42556,7 +42766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71e993be113486a45a3351ec5ea6b2c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dfa9bbec3ad64d44a79a9b6282f2afb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -44843,7 +45053,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1697556394
 MonoBehaviour:
@@ -44947,15 +45157,15 @@ MonoBehaviour:
   Joker: {fileID: 618732735}
   JokerI: {fileID: 618732736}
   c:
-  - {fileID: 21300000, guid: ddf19644332aad248a192298dc57487d, type: 3}
-  - {fileID: 21300000, guid: 440584bbeba974946831de7614ed5f74, type: 3}
-  - {fileID: 21300000, guid: 9bbb69accc21c3f48878c0111fd1659d, type: 3}
-  - {fileID: 21300000, guid: 36dab599433ff8c46958794780ed8147, type: 3}
+  - {fileID: 21300000, guid: f0b0394437b40104b95552c7aa509610, type: 3}
+  - {fileID: 21300000, guid: 17a09beb5a00ed14f9a50f31a162c892, type: 3}
+  - {fileID: 21300000, guid: c37b54955c92db8479b91936e748018c, type: 3}
+  - {fileID: 21300000, guid: 543796ccc1f03a3479e257bd9b0985bb, type: 3}
   - {fileID: 21300000, guid: 4fce52bc1aa1bde4fabac97aaa2704a5, type: 3}
   - {fileID: 21300000, guid: 129d823b31c540144af5836ca1003314, type: 3}
-  - {fileID: 21300000, guid: b1695d45d21f6ea4687cb73675a5c2b7, type: 3}
-  - {fileID: 21300000, guid: 902fa74d2d9b7ec45a452db04fc0f97f, type: 3}
-  - {fileID: 21300000, guid: 07fec3ebb301bdd4281a929fc400dee5, type: 3}
+  - {fileID: 21300000, guid: e287a20f31a9c5c4c8eb9bcc5ad5fa2f, type: 3}
+  - {fileID: 21300000, guid: 1d66fcfc56517664d9ec0b343fdb1c6d, type: 3}
+  - {fileID: 21300000, guid: d41b70f5fe7059949b37d3f11f2a17ee, type: 3}
   e: 0
   o: {fileID: 2056272457}
   IA: 0
@@ -45109,8 +45319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.4, y: 2.1}
-  m_SizeDelta: {x: 636.5, y: 168.6}
+  m_AnchoredPosition: {x: -142.1, y: 2.1}
+  m_SizeDelta: {x: 640.29614, y: 168.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703275110
 MonoBehaviour:
@@ -45277,28 +45487,26 @@ MonoBehaviour:
   - Speak:
     - I see you started without me. Do you already know this game?
     - So let me introduce myself.
-    - My name is Tobias, but you can call me Twisted Fate
-    - The name of this game is Fate of Legends, I created it based on the experiences
-      I had in Summoners Rift.
-    - As a child, my grandfather taught me that the world is not purely random or
-      purely deterministic
-    - The structure of reality is actually formed by random events within deterministic
-      probabilities.
-    - What does this have to do with this game?
-    - All.
+    - My name is Amnezy.
+    - The name of this world is Guem.
+    - Many heroes started their journey towards the stone that fell from the sky.
+    - If you want to explore this world you will have to be prepared to face several
+      enemies.
+    - Are you prepared?
+    - Yes you are.
     - For you to win here, you will have to deduct the opponent's actions, you will
-      have to predict what will happen to the champions. You will have to behold
-      the Fate of Legends.
-    - But first you need to learn the basic rules of the game.
+      have to predict what will happen to the heroes. You will have to behold the
+      future.
+    - But first you need to learn the basic rules of the universe.
     - Where do I start...?
-    - Well, the objective of the game is to reduce the life of the enemy nexus to
-      0, and for that you will have to use your champions.
-    - Allied champions have a blue border and opponents have a red border.
-    - Let's go to the practical part of the class!
-    - First select an allied champion
-    - If you want to attack with him, select an opponent's champion next to him
-    - If you want to move it, select another allied champion or an empty zone next
-      to it.
+    - Well, the objective of the battle is to reduce the life of the enemy nexus
+      to 0, and for that you will have to use your heroes.
+    - Allied heroes have a blue border and opponents have a red border.
+    - Let's go to the practical part of the lesson.
+    - First select an allied hero.
+    - If you want to attack with him, select an opponent's hero next to him.
+    - If you want to move it, select another allied hero or an empty zone next to
+      it.
   - Speak:
     - Your abilities will only activate if you have a power greater than the opponent's
       power.
@@ -45312,13 +45520,6 @@ MonoBehaviour:
     - This means that the best move is to get a higher power than the opponent by
       spending the least amount of mana possible.
     - To do this, you will have to deduce what your opponent will do.
-    - This game is more than a mathematical battle where the player with the best
-      cards wins
-    - I created Fate of Legends so that it would be a mental battle where players
-      put their hearts into trying to deceive and understand their opponents.
-    - To win you need to deduct what your opponent will do and prevent him from deducting
-      your actions.
-    - Or you can play randomly, it's risky, but sometimes it works.
   - Speak:
     - Your champions don't have infinite mana and energy, so they need to wait a
       while before they can cast new skills.
@@ -45342,28 +45543,22 @@ MonoBehaviour:
       life lost.
     - In addition, champions gain 2 energy and speed.
   - Speak:
-    - The objective of the game is to reduce the life of the enemy nexus to 0, to
-      do this you can damage the enemy nexus by attacking it directly, but before
-      you will have to move a champion so that it is close to the opponent's nexus.
+    - The objective of the battle is to reduce the life of the enemy nexus to 0,
+      to do this you can damage the enemy nexus by attacking it directly, but before
+      you will have to move a hero so that it is close to the opponent's nexus.
   - Speak:
-    - Betting games have always fascinated me
-    - It didn't matter how much I studied or trained them
-    - I never managed to come up with a perfect strategy
-    - It's like life
-    - No matter how much I think about it, everything I do is a gamble, my actions
-      can always go right or wrong
-    - In the end, I find it very fun
-    - I just wanted to say
-    - Congratulations for the victory!
+    - I'm afraid.
+    - I am afraid that I could not recreate this world.
+    - But you've made it this far, you've overcome all the obstacles that stood in
+      your way.
+    - It gives me hope.
+    - 'I just wanted to say:'
+    - "F\xE9licitations pour la victoire."
   - Speak:
-    - With my aunt I learned to read the opponent's mind, but there is no magic in
-      it
-    - All the choices, moves and attacks he made, the champions he chose, his experience,
-      his strength, the skills he used, all of which will allow you to deduce what
-      he will do.
-    - My opponents ignored this, so at the beginning of the games they thought I
-      was lucky and in the end they thought I cheated.
-    - Most of the time I also cheated, but that is beside the point.
+    - 0
+    - 1
+    - 2
+    - 3
   x: 0
   a: 0
   Language: 0
@@ -47423,7 +47618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3999863, y: -25.099976}
+  m_AnchoredPosition: {x: 0.72994995, y: -19.019989}
   m_SizeDelta: {x: 203.52, y: 288.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786979698
@@ -47938,7 +48133,7 @@ RectTransform:
   - {fileID: 1755954626}
   - {fileID: 746926841}
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -48247,7 +48442,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 50725629}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -49126,6 +49321,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835797133}
   m_CullTransparentMesh: 0
+--- !u!1 &1836360340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1836360341}
+  - component: {fileID: 1836360343}
+  - component: {fileID: 1836360342}
+  m_Layer: 5
+  m_Name: TESTe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1836360341
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836360340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8099548, y: 1.8099548, z: 1.8099548}
+  m_Children: []
+  m_Father: {fileID: 50725629}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -143, y: 147}
+  m_SizeDelta: {x: 160, y: 109.13071}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1836360342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836360340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 85
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Atacante
+--- !u!222 &1836360343
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836360340}
+  m_CullTransparentMesh: 0
 --- !u!1 &1836476837
 GameObject:
   m_ObjectHideFlags: 0
@@ -49582,6 +49856,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1843659907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49879,7 +50159,7 @@ RectTransform:
   - {fileID: 1400251263}
   - {fileID: 990868612}
   m_Father: {fileID: 1970069834}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -51159,6 +51439,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1885550135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51394,11 +51680,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Gank
+  m_Text: '
 
 
-    When an enemy champion does damage to your nexus, deal 6 true
-    damage to that champion.'
+    When an enemy champion does damage to your nexus, deal 6 true damage
+    to that champion.'
 --- !u!222 &1892846949
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -53068,6 +53354,12 @@ MonoBehaviour:
   Mana1: 0
   Mana2: 0
   ManaSpend: 0
+  MovB: {fileID: 583175354}
+  MovI: {fileID: 583175355}
+  MovT: {fileID: 1520718183}
+  FightB: {fileID: 1336475370}
+  FightI: {fileID: 1336475371}
+  FightT: {fileID: 786965042}
 --- !u!114 &1962496588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53298,7 +53590,6 @@ RectTransform:
   - {fileID: 1234130453}
   - {fileID: 623060746}
   - {fileID: 984162962}
-  - {fileID: 972341554}
   - {fileID: 1614385100}
   - {fileID: 1790298837}
   - {fileID: 1848467648}
@@ -55323,7 +55614,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056907438
 GameObject:
@@ -55459,13 +55750,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2060266654}
   - component: {fileID: 2060266653}
+  - component: {fileID: 2060266655}
   m_Layer: 0
   m_Name: Efeitos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2060266653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55705,6 +55997,28 @@ RectTransform:
   m_AnchoredPosition: {x: 400.00003, y: 224.85878}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2060266655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060266652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2060284228
 GameObject:
   m_ObjectHideFlags: 0
@@ -55787,7 +56101,7 @@ Transform:
   m_Children:
   - {fileID: 709864950}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063772773
 GameObject:
@@ -57689,11 +58003,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spritos:
-  - {fileID: 21300000, guid: 62b1569bdf29ad342a9e5d222780d1ff, type: 3}
-  - {fileID: 21300000, guid: 0d6e52d2e04b91f458cf8bef24357c6b, type: 3}
-  - {fileID: 21300000, guid: 142ab4436b9c8fe40a289fbd6d547321, type: 3}
-  - {fileID: 21300000, guid: e466c2700122f58468d5737ac6ee9104, type: 3}
-  - {fileID: 21300000, guid: ae54a0f365257e845b93a2d81aa310c9, type: 3}
+  - {fileID: 21300000, guid: ccf7ee9a0eb84e749927316cbff086c8, type: 3}
+  - {fileID: 21300000, guid: 38b9625b22eede54da9e98ecfee35b66, type: 3}
+  - {fileID: 21300000, guid: 43a72ec03b07958499412faf77cf7c3f, type: 3}
+  - {fileID: 21300000, guid: 7e5da6371dd4f774badac232f780871c, type: 3}
+  - {fileID: 21300000, guid: 7e5da6371dd4f774badac232f780871c, type: 3}
   b1: {fileID: 974263631}
   b2: {fileID: 1703783928}
   Imago1: {fileID: 444702558}
@@ -57737,7 +58051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3999863, y: -25.099976}
+  m_AnchoredPosition: {x: 0.18999481, y: -19.169998}
   m_SizeDelta: {x: 203.52, y: 288.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2147128711

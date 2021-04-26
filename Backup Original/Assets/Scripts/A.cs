@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 [System.Serializable]
-public class A : MonoBehaviour
+public class A : MonoBehaviourPunCallbacks
 {
     public int player1;
     public int player2;
@@ -46,6 +48,7 @@ public class A : MonoBehaviour
     public GameObject DanoA;
     public GameObject DanoE;
     public List<GameObject> Stun;
+    public F F;
 
 
     public Text DamageTA;
@@ -74,36 +77,149 @@ public class A : MonoBehaviour
     public List<RectTransform> Size;
     public List<RectTransform> SizeMB;
     public List<RectTransform> SizeMR;
-
+    public static A Master;
+    public E e;
+    public E e1;
+    public E e2;
+    public bool offline;
+    public Generic Generic;
+    //Test Variables
+    public Text test;
+    public int testint;
+    public bool Atacante;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        Master = this;
+    }
+    [PunRPC]
+    public void MoveNetwork0(int idzone1, int idcard1)
+    {
+        PlayerPrefs.SetInt("A", idcard1);
+        PlayerPrefs.SetInt("B", idzone1);
+        e.Lyoko0.Clear();
+        idzone1 = Generic.MirrorConversor(idzone1);
 
-        end = 10;
-        turn = 0;
-        round = 1;
-        Round.A();
-        for (int x = 0; x < 10; x = x + 1)
+        for (int x = 0; x < Zone[idzone1].Lyoko.Count; x = x + 1)
         {
-            j[x].enabled = false;
+            e.Lyoko0.Add(Zone[idzone1].Lyoko[x]);
         }
+    }
+    [PunRPC]
+    public void MoveNetwork(int idcard1, int idcard2, int idzone1, int idzone2 )
+    {
+        e.Lyoko1.Clear();
+        idzone1 = Generic.MirrorConversor(idzone1);
+        idzone2 = Generic.MirrorConversor(idzone2);
+        for (int x = 0; x < Zone[idzone1].Lyoko.Count; x = x + 1)
+        {
+            e.Lyoko1.Add(Zone[idzone1].Lyoko[x]);
+        }
+
+
+        e.idcard1 = idcard1;
+        e.idcard2 = idcard2;
+        e.idzone1 = idzone1;
+        e.idzone2 = idzone2;
+
+
+        e1.idcard1 = idcard1;
+        e1.idcard2 = idcard2;
+        e1.idzone1 = idzone1;
+        e1.idzone2 = idzone2;
+
+    }
+    [PunRPC]
+    public void FightNetwork(int idcard1, int idcard2, int idzone1, int idzone2)
+    {
+        idzone1 = Generic.MirrorConversor(idzone1);
+        idzone2 = Generic.MirrorConversor(idzone2);
+        F.y = idzone1;
+        F.z = idzone2;
+        F.card1 = idcard2;
+        F.card2 = idcard1;
+
+        e2.idcard1 = idcard2;
+        e2.idcard2 = idcard1;
+        e2.idzone1 = idzone2;
+        e2.idzone2 = idzone1;
+
+
+    }
+
+    [PunRPC]
+    public void DistributionRequest()
+    {
+        //Cards[3],Cards[4],Cards[5] are the allied cards, Cards[0],Cards[1],Cards[2] are the enemy cards
+        Cards[3] = PlayerPrefs.GetInt("Card1");
+        Cards[4] = PlayerPrefs.GetInt("Card2");
+        Cards[5] = PlayerPrefs.GetInt("Card3");
+        photonView.RPC("DistributionRequest2", RpcTarget.Others,Cards[3], Cards[4], Cards[5]);
+    }
+    [PunRPC]
+    public void DistributionRequest2(int card1, int card2, int card3)
+    {
+        Cards[0] = card1;
+        Cards[1] = card2;
+        Cards[2] = card3;
+        Distribution();
+
+    }
+
+    [PunRPC]
+    public void Attacking(bool minhapica)
+    {
+        Debug.Log(Atacante);
+        if (minhapica == false)
+        {
+            test.text = "Defensor";
+            Atacante = false;
+            DisableO.SetActive(true);
+        }
+        else
+        {
+            test.text = "Atacante";
+            Atacante = true;
+            DisableO.SetActive(false);
+        }
+        Debug.Log(Atacante);
+
+    }
+    public void Distribution()
+    {
+        if (PhotonNetwork.IsMasterClient==true)
+        {
+            testint = Random.Range(0, 2);
+            if (testint == 0)
+            {
+                Attacking(true);
+                photonView.RPC("Attacking", RpcTarget.Others, false);
+
+            }
+            else
+            {
+                Attacking(false);
+                photonView.RPC("Attacking", RpcTarget.Others, true);
+
+            }
+           
+        }
+
+
+
+        Cards[3] = PlayerPrefs.GetInt("Card1");
+        Cards[4] = PlayerPrefs.GetInt("Card2");
+        Cards[5] = PlayerPrefs.GetInt("Card3");
         PlayerPrefs.SetInt("1", 0);
         PlayerPrefs.SetInt("0", 1);
         player1 = PlayerPrefs.GetInt("0");
         player2 = PlayerPrefs.GetInt("1");
-        Cards[3] = PlayerPrefs.GetInt("Card1");
-        Cards[4] = PlayerPrefs.GetInt("Card2");
-        Cards[5] = PlayerPrefs.GetInt("Card3");
-        Cards[0] = PlayerPrefs.GetInt("Card4");
-        Cards[1] = PlayerPrefs.GetInt("Card5");
-        Cards[2] = PlayerPrefs.GetInt("Card6");
         decklist.deck[0].card.Add(DD.Chara[Cards[0]]);
         decklist.deck[0].card.Add(DD.Chara[Cards[1]]);
         decklist.deck[0].card.Add(DD.Chara[Cards[2]]);
         decklist.deck[1].card.Add(DD.Chara[Cards[3]]);
         decklist.deck[1].card.Add(DD.Chara[Cards[4]]);
         decklist.deck[1].card.Add(DD.Chara[Cards[5]]);
-        //Distribuição dos Cards
         if (decklist.deck[player1].card.Count > 1)
         {
             for (int x = 0; x < decklist.deck[player1].card.Count; x = x + 1)
@@ -114,6 +230,10 @@ public class A : MonoBehaviour
                 Bluej[x + 3].SetActive(true);
                 zone[x + 3].sprite = decklist.deck[player1].card[x].sprite;
                 zoneid[x + 3].idcard1 = decklist.deck[player1].card[x].id;
+                if (Atacante == false && offline == false)
+                {
+                    zoneid[x+3].idcard1 *= -1;
+                }
                 zoneid[x + 3].Lyoko[0] = decklist.deck[player1].card[x].Vida;
                 zoneid[x + 3].Lyoko[1] = decklist.deck[player1].card[x].Ataque;
                 zoneid[x + 3].Lyoko[2] = decklist.deck[player1].card[x].Defesa;
@@ -143,6 +263,10 @@ public class A : MonoBehaviour
             Bluej[4].SetActive(true);
             zone[4].sprite = decklist.deck[player1].card[0].sprite;
             zoneid[4].idcard1 = decklist.deck[player1].card[0].id;
+            if (Atacante == false && offline == false)
+            {
+                zoneid[4].idcard1 *= -1;
+            }
             zoneid[4].Lyoko[0] = decklist.deck[player1].card[0].Vida;
             zoneid[4].Lyoko[1] = decklist.deck[player1].card[0].Ataque;
             zoneid[4].Lyoko[2] = decklist.deck[player1].card[0].Defesa;
@@ -173,6 +297,10 @@ public class A : MonoBehaviour
                 Bluej[x].SetActive(false);
                 zone[x].sprite = decklist.deck[player2].card[x].sprite;
                 zoneid[x].idcard1 = decklist.deck[player2].card[x].id * -1;
+                if (Atacante == false && offline==false)
+                {
+                    zoneid[x].idcard1 *= -1;
+                }
                 zoneid[x].Lyoko[0] = decklist.deck[player2].card[x].Vida;
                 zoneid[x].Lyoko[1] = decklist.deck[player2].card[x].Ataque;
                 zoneid[x].Lyoko[2] = decklist.deck[player2].card[x].Defesa;
@@ -202,6 +330,10 @@ public class A : MonoBehaviour
             Bluej[1].SetActive(false);
             zone[1].sprite = decklist.deck[player2].card[0].sprite;
             zoneid[1].idcard1 = decklist.deck[player2].card[0].id * -1;
+            if (Atacante == false && offline == false)
+            {
+                zoneid[1].idcard1 *= -1;
+            }
             zoneid[1].Lyoko[0] = decklist.deck[player2].card[0].Vida;
             zoneid[1].Lyoko[1] = decklist.deck[player2].card[0].Ataque;
             zoneid[1].Lyoko[2] = decklist.deck[player2].card[0].Defesa;
@@ -221,6 +353,167 @@ public class A : MonoBehaviour
             LifeT[2].text = zoneid[1].Lyoko[0].ToString();
 
         }
+        StartofGameEffects();
+        O.a = 1;
+        O.A();
+    }
+
+
+    void Start()
+    {
+
+        end = 10;
+        turn = 0;
+        round = 1;
+        Round.A();
+        for (int x = 0; x < 10; x = x + 1)
+        {
+            j[x].enabled = false;
+        }
+        PlayerPrefs.SetInt("1", 0);
+        PlayerPrefs.SetInt("0", 1);
+        player1 = PlayerPrefs.GetInt("0");
+        player2 = PlayerPrefs.GetInt("1");
+        Cards[3] = PlayerPrefs.GetInt("Card1");
+        Cards[4] = PlayerPrefs.GetInt("Card2");
+        Cards[5] = PlayerPrefs.GetInt("Card3");
+        Cards[0] = PlayerPrefs.GetInt("Card4");
+        Cards[1] = PlayerPrefs.GetInt("Card5");
+        Cards[2] = PlayerPrefs.GetInt("Card6");
+        /*decklist.deck[0].card.Add(DD.Chara[Cards[0]]);
+        decklist.deck[0].card.Add(DD.Chara[Cards[1]]);
+        decklist.deck[0].card.Add(DD.Chara[Cards[2]]);
+        decklist.deck[1].card.Add(DD.Chara[Cards[3]]);
+        decklist.deck[1].card.Add(DD.Chara[Cards[4]]);
+        decklist.deck[1].card.Add(DD.Chara[Cards[5]]);*/
+        if (offline == false)
+        {
+            photonView.RPC("DistributionRequest", RpcTarget.OthersBuffered);
+        }
+        else
+        {
+            Distribution();
+        }
+        
+        //Distribuição dos Cards
+        /* if (decklist.deck[player1].card.Count > 1)
+         {
+             for (int x = 0; x < decklist.deck[player1].card.Count; x = x + 1)
+             {
+                 j[x + 3].enabled = true;
+                 MoldB[x + 3].SetActive(true);
+                 MoldR[x + 3].SetActive(false);
+                 Bluej[x + 3].SetActive(true);
+                 zone[x + 3].sprite = decklist.deck[player1].card[x].sprite;
+                 zoneid[x + 3].idcard1 = decklist.deck[player1].card[x].id;
+                 zoneid[x + 3].Lyoko[0] = decklist.deck[player1].card[x].Vida;
+                 zoneid[x + 3].Lyoko[1] = decklist.deck[player1].card[x].Ataque;
+                 zoneid[x + 3].Lyoko[2] = decklist.deck[player1].card[x].Defesa;
+                 zoneid[x + 3].Lyoko2.Add(decklist.deck[player1].card[x].Vida);
+                 zoneid[x + 3].Lyoko2.Add(decklist.deck[player1].card[x].Ataque);
+                 zoneid[x + 3].Lyoko2.Add(decklist.deck[player1].card[x].Defesa);
+                 zoneid[x + 3].idPersonagem = decklist.deck[player1].card[x].idPersonagem;
+
+
+                 zoneid[x + 3].Mana = decklist.deck[player1].card[x].Level;
+                 zoneid[x + 3].Mana1 = decklist.deck[player1].card[x].Level;
+
+                 zoneid[x + 3].Lyoko1.Add(0);
+                 zoneid[x + 3].Lyoko1.Add(0);
+                 zoneid[x + 3].Lyoko1.Add(0);
+                 zoneid[x + 3].side = 1;
+                 Heart[x + 4].SetActive(true);
+
+                 LifeT[x + 4].text = zoneid[x + 3].Lyoko[0].ToString();
+             }
+         }
+         else
+         {
+             j[4].enabled = true;
+             MoldB[4].SetActive(true);
+             MoldR[4].SetActive(false);
+             Bluej[4].SetActive(true);
+             zone[4].sprite = decklist.deck[player1].card[0].sprite;
+             zoneid[4].idcard1 = decklist.deck[player1].card[0].id;
+             zoneid[4].Lyoko[0] = decklist.deck[player1].card[0].Vida;
+             zoneid[4].Lyoko[1] = decklist.deck[player1].card[0].Ataque;
+             zoneid[4].Lyoko[2] = decklist.deck[player1].card[0].Defesa;
+             zoneid[4].Lyoko2.Add(decklist.deck[player1].card[0].Vida);
+             zoneid[4].Lyoko2.Add(decklist.deck[player1].card[0].Ataque);
+             zoneid[4].Lyoko2.Add(decklist.deck[player1].card[0].Defesa);
+             zoneid[4].idPersonagem = decklist.deck[player1].card[0].idPersonagem;
+
+
+             zoneid[4].Mana = decklist.deck[player1].card[0].Level;
+             zoneid[4].Mana1 = decklist.deck[player1].card[0].Level;
+
+             zoneid[4].Lyoko1.Add(0);
+             zoneid[4].Lyoko1.Add(0);
+             zoneid[4].Lyoko1.Add(0);
+             zoneid[4].side = 1;
+             Heart[5].SetActive(true);
+
+             LifeT[5].text = zoneid[4].Lyoko[0].ToString();
+         }
+         if (decklist.deck[player2].card.Count > 1)
+         {
+             for (int x = 0; x < decklist.deck[player2].card.Count; x = x + 1)
+             {
+                 j[x].enabled = false;
+                 MoldB[x].SetActive(false);
+                 MoldR[x].SetActive(true);
+                 Bluej[x].SetActive(false);
+                 zone[x].sprite = decklist.deck[player2].card[x].sprite;
+                 zoneid[x].idcard1 = decklist.deck[player2].card[x].id * -1;
+                 zoneid[x].Lyoko[0] = decklist.deck[player2].card[x].Vida;
+                 zoneid[x].Lyoko[1] = decklist.deck[player2].card[x].Ataque;
+                 zoneid[x].Lyoko[2] = decklist.deck[player2].card[x].Defesa;
+                 zoneid[x].Lyoko2.Add(decklist.deck[player2].card[x].Vida);
+                 zoneid[x].Lyoko2.Add(decklist.deck[player2].card[x].Ataque);
+                 zoneid[x].Lyoko2.Add(decklist.deck[player2].card[x].Defesa);
+                 zoneid[x].idPersonagem = decklist.deck[player2].card[x].idPersonagem;
+
+
+                 zoneid[x].Mana = decklist.deck[player2].card[x].Level;
+                 zoneid[x].Mana1 = decklist.deck[player2].card[x].Level;
+
+                 zoneid[x].Lyoko1.Add(0);
+                 zoneid[x].Lyoko1.Add(0);
+                 zoneid[x].Lyoko1.Add(0);
+                 zoneid[x].side = -1;
+                 Heart[x + 1].SetActive(true);
+
+                 LifeT[x + 1].text = zoneid[x].Lyoko[0].ToString();
+             }
+         }
+         else
+         {
+             j[1].enabled = false;
+             MoldB[1].SetActive(false);
+             MoldR[1].SetActive(true);
+             Bluej[1].SetActive(false);
+             zone[1].sprite = decklist.deck[player2].card[0].sprite;
+             zoneid[1].idcard1 = decklist.deck[player2].card[0].id * -1;
+             zoneid[1].Lyoko[0] = decklist.deck[player2].card[0].Vida;
+             zoneid[1].Lyoko[1] = decklist.deck[player2].card[0].Ataque;
+             zoneid[1].Lyoko[2] = decklist.deck[player2].card[0].Defesa;
+             zoneid[1].Lyoko2.Add(decklist.deck[player2].card[0].Vida);
+             zoneid[1].Lyoko2.Add(decklist.deck[player2].card[0].Ataque);
+             zoneid[1].Lyoko2.Add(decklist.deck[player2].card[0].Defesa);
+             zoneid[1].idPersonagem = decklist.deck[player2].card[0].idPersonagem;
+
+             zoneid[1].Mana = decklist.deck[player2].card[0].Level;
+             zoneid[1].Mana1 = decklist.deck[player2].card[0].Level;
+             zoneid[1].Lyoko1.Add(0);
+             zoneid[1].Lyoko1.Add(0);
+             zoneid[1].Lyoko1.Add(0);
+             zoneid[1].side = 1;
+             Heart[2].SetActive(true);
+
+             LifeT[2].text = zoneid[1].Lyoko[0].ToString();
+
+         }
+        */
         iguilda[0].sprite = guild[player2].sprite;
         iguilda[1].sprite = guild[player1].sprite;
         i[0].id = guild[player2].id * -1;
@@ -230,9 +523,9 @@ public class A : MonoBehaviour
         ib[0].enabled = false;
         ib[1].enabled = false;
         //Passive effects
-        StartofGameEffects();
+       /* StartofGameEffects();
         O.a = 1;
-        O.A();
+        O.A();*/
     }
 
     // Update is called once per frame
@@ -242,6 +535,7 @@ public class A : MonoBehaviour
     }
     public void B()
     {
+
         round += 1;
         turn = 0;
         DamageA = 0;
@@ -420,6 +714,18 @@ public class A : MonoBehaviour
     }
     public void StartofTurnEffects()
     {
+        Debug.Log("TurnUp");
+        if (Atacante == true)
+        {
+            Debug.Log("GoDefensor");
+            Attacking(false);
+        }
+        else
+        {
+            Debug.Log("GoAttacking");
+            Attacking(true);
+        }
+
         if (turn == 8)
         {
             Recall();
@@ -467,7 +773,7 @@ public class A : MonoBehaviour
             if (Zone[x].idcard1 == 22 || Zone[x].idcard1 == -22)
             {
 
-                Zone[x].Code[9] = true;
+                //Zone[x].Code[9] = true;
 
             }
             //Passive Vlad
@@ -482,6 +788,7 @@ public class A : MonoBehaviour
     //Start of Round Effects
     public void StartOfRoundEffects()
     {
+
         //Anivia Passive
         /*if (Zone[k].Code[10] == true)
                 {

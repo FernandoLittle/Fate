@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
   m_Name: Fiora
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 7f15e14f94ab1b341803af77e85f99c8, type: 3}
-  sprite1: {fileID: 21300000, guid: aae6df67f0d91f1419f9c08d78e68881, type: 3}
+  sprite: {fileID: 21300000, guid: e5e983ec67b0b464d938c23a379a43cc, type: 3}
+  sprite1: {fileID: 21300000, guid: e5e983ec67b0b464d938c23a379a43cc, type: 3}
   id: 26
   idPersonagem: 0
   AtaqueForte: 1b000000

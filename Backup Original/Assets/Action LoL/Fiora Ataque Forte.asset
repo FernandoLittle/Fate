@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Fiora Ataque Forte
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1a2bc10438b00f349a59ffad4f703b0c, type: 3}
+  sprite: {fileID: 21300000, guid: 4724b7eabd66a0443a87dfcaea74d903, type: 3}
   id: 27
-  Texto0: 'Passive: Duelist: + 1 Level. Victory: Deals 4 true damage. If you use exactly
-    4 mana, deals 8 damage instead.'
-  Texto0br: '4- Acerto: Causa dano igual ao seu ataque mais 2 para cada contador vital
-    que o oponente possuir.'
+  Texto0: 'Passive: Duelist: + 1 Level. Victory: Deals 4 true damage. If you use
+    exactly 4 mana, deals 8 damage instead.'
+  Texto0br: '4- Acerto: Causa dano igual ao seu ataque mais 2 para cada contador
+    vital que o oponente possuir.'
   scale: 5
   IAturn: 6

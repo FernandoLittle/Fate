@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Lee Bloqueio
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 146d3c2499b35d445a447a4fa51d9b6f, type: 3}
+  sprite: {fileID: 21300000, guid: a3b0178d35c68e741ad3192e048d8772, type: 3}
   id: 19
   Texto0: 'Passive: Aggro: +2 Level. Victory: Until the end of the round, every time
     you deal damage, regenerate life equal to the damage done.'

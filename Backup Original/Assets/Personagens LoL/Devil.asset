@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
   m_Name: Devil
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 3c0ce7c6d7eb2cd4992e936b21b51ad4, type: 3}
-  sprite1: {fileID: 21300000, guid: 23319de6a111b4941892ea8e982bd702, type: 3}
+  sprite: {fileID: 21300000, guid: e3cd2872d686df140b287f0675b03fbd, type: 3}
+  sprite1: {fileID: 21300000, guid: e3cd2872d686df140b287f0675b03fbd, type: 3}
   id: 21
   idPersonagem: 0
   AtaqueForte: 16000000
   "AtaqueR\xE1pido": 13000000
-  Bloqueio: 15000000
+  Bloqueio: 17000000
   Esquiva: 0f000000
   Vida: 9
   Ataque: 6
@@ -26,9 +26,9 @@ MonoBehaviour:
   act: 2
   mov: 2
   Level: 12
-  Passive: 'I spread mushrooms all over the map, when an opponent moves he will step
-    on one of those mushrooms taking 1 damage. Ambush: My abilities activate their
-    passive effects if I haven''t attacked or moved this round.'
+  Passive: 'I spread traps all over the map, when an opponent moves he will step
+    on one of those traps taking 1 damage. Ambush: My abilities activate their passive
+    effects if I haven''t attacked or moved this round.'
   Passivebr: "Eu espalho cogumelos por todo o mapa, quando um advers\xE1rio se mover
     ele pisar\xE1 em um desses cogumelos recebendo 1 de dano. My abilities don't
     activate their passive effects after I move or attack for the first time in a

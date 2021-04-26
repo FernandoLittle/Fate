@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
   m_Name: Kalista
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 7a2d9a13429051f4691a6b9a65fa0483, type: 3}
-  sprite1: {fileID: 21300000, guid: d4762f4d60452e14e95157e03e689c54, type: 3}
+  sprite: {fileID: 21300000, guid: c0d5c3b088b7c5043a0f6992d9eb48d5, type: 3}
+  sprite1: {fileID: 21300000, guid: c0d5c3b088b7c5043a0f6992d9eb48d5, type: 3}
   id: 23
   idPersonagem: 0
   AtaqueForte: 18000000

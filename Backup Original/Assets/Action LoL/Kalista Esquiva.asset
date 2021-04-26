@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Kalista Esquiva
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bba18343149e5cd4ca696c9b538db871, type: 3}
+  sprite: {fileID: 21300000, guid: fbe8d62bab306754bb6cb9b9be4c1881, type: 3}
   id: 17
   Texto0: 'Passive: Pact: -7 Opponent Power (min 8). Victory: Deals 5 damage.'
   Texto0br: "3- Acerto: Causa 5 de dano e adiciona um contador de lan\xE7a ao oponente."

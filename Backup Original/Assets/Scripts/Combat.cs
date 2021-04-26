@@ -4,22 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
-
-public class Combat : MonoBehaviour
+public class Combat : MonoBehaviourPunCallbacks
 {
     public int AttackA;
     public int AttackE;
-    public int LvA;
-    public int LvE;
+    public int ManaSpendA;
+    public int ManaSpendE;
     public int ScaleA;
     public int ScaleE;
-    public Text LvAT;
+    public Text ManaSpendT;
     public Text AttackAT;
-    public int LevelA;
-    public int LevelE;
-    public Text LevelAT;
-    public Text LevelET;
+    public int ManaA;
+    public int ManaE;
+    public Text ManaAT;
+    public Text ManaET;
     public List<Animator> FightAN;
     public List<Animator> FightANT;
     public List<Animator> Draco1;
@@ -29,10 +30,10 @@ public class Combat : MonoBehaviour
     public List<GameObject> Dark;
     public Text AttackCA;
     public Text ScaleCA;
-    public Text LVCA;
+    public Text ManaCA;
     public Text AttackCE;
     public Text ScaleCE;
-    public Text LVCE;
+    public Text ManaCE;
     public Expect Expect;
     public FantasyRivalsIA FantasyRivalsIA;
     public List<Animator> anime;
@@ -53,12 +54,15 @@ public class Combat : MonoBehaviour
     public int k;
     public int k0;
     public A A;
+    public bool AllyConfirm;
+    public bool EnemyConfirm;
+    public bool NoRepeatKey;
     // Start is called before the first frame update
     void Start()
     {
 
-        LevelAT.text = LevelA.ToString();
-        LevelET.text = LevelE.ToString();
+        ManaAT.text = ManaA.ToString();
+        ManaET.text = ManaE.ToString();
 
     }
 
@@ -67,37 +71,165 @@ public class Combat : MonoBehaviour
     {
 
     }
-    public void LvUp()
+    public void MANAUP()
     {
-        if (LevelA > 0)
+        if (ManaA > 0)
         {
-            LevelA -= 1;
-            LevelAT.text = LevelA.ToString();
-            LvA += 1;
+            ManaA -= 1;
+            ManaAT.text = ManaA.ToString();
+            ManaSpendA += 1;
             Calculus();
             D.LevelChange(-1, true);
         }
 
     }
-    public void LvDown()
+    public void MANADOWN()
     {
-        if (LvA > 0)
+        if (ManaSpendA > 0)
         {
-            LevelA += 1;
-            LevelAT.text = LevelA.ToString();
-            LvA -= 1;
+            ManaA += 1;
+            ManaAT.text = ManaA.ToString();
+            ManaSpendA -= 1;
             Calculus();
             D.LevelChange(1, true);
         }
     }
     public void Calculus()
     {
-        LvAT.text = LvA.ToString();
-        AttackAT.text = (LvA * ScaleA).ToString();
+        ManaSpendT.text = ManaSpendA.ToString();
+        AttackAT.text = (ManaSpendA * ScaleA).ToString();
     }
     public void Fight()
     {
-        D.Zone[D.p1].ManaSpend = LvA;
+        if (A.offline == true)
+        {
+            D.Zone[D.p1].ManaSpend = ManaSpendA;
+            D.DisableA(true);
+            for (int x = 0; x < FightAN.Count; x = x + 1)
+            {
+
+                FightAN[x].Play("Spectral3");
+            }
+            for (int x = 0; x < FightANT.Count; x = x + 1)
+            {
+
+                FightANT[x].Play("SpectralText0");
+            }
+
+
+
+            for (int x = 0; x < Blue.Count; x = x + 1)
+            {
+
+                Blue[x].SetActive(false);
+            }
+            //BIBRIRIBRI
+            Debug.Log("CORRIGE SA MERDA");
+            if (A.offline == true)
+            {
+                if (o.NexusE.id * o.NexusE.side < 0)
+                {
+
+                    Attacking = 1;
+                }
+                else
+                {
+                    Attacking = 0;
+                }
+            }
+            else
+            {
+                if (A.Atacante == true)
+                {
+                    Attacking = 1;
+                }
+                else
+                {
+                    Attacking = 0;
+                }
+            }
+
+
+
+
+            FantasyRivals[0].SetActive(true);
+            FantasyRivals[1].SetActive(true);
+            Dark[1].SetActive(true);
+            Dark[0].SetActive(false);
+            Expect.ManaSpendA = ManaSpendA;
+            Expect.ManaA = ManaA;
+            Expect.OriginalManaSpendA = 0;
+            Expect.OriginalManaA = ManaSpendA + ManaA;
+            Expect.ScaleA = ScaleA;
+            Expect.ScaleE = ScaleE;
+            FantasyRivalsIA.ManE = ManaE;
+            FantasyRivalsIA.ManA = ManaA + ManaSpendA;
+            FantasyRivalsIA.IA();
+
+
+
+            ScaleAE[0] = ScaleA;
+            ScaleAE[1] = ScaleE;
+
+            ScaleChangeEffects();
+            if (ScaleAE[0] > ScaleA)
+            {
+                ScaleCA.color = new Color(0, 0.9f, 0, 1);
+            }
+            if (ScaleAE[0] == ScaleA)
+            {
+                ScaleCA.color = new Color(1, 1, 1, 1);
+            }
+            if (ScaleAE[0] < ScaleA)
+            {
+                ScaleCA.color = new Color(0.9f, 0, 0, 1);
+            }
+            if (ScaleAE[1] > ScaleE)
+            {
+                ScaleCE.color = new Color(0, 0.9f, 0, 1);
+            }
+            if (ScaleAE[1] == ScaleE)
+            {
+                ScaleCE.color = new Color(1, 1, 1, 1);
+            }
+            if (ScaleAE[1] < ScaleE)
+            {
+                ScaleCE.color = new Color(0.9f, 0, 0, 1);
+            }
+
+
+            ScaleA = ScaleAE[0];
+            ScaleE = ScaleAE[1];
+
+            ScaleCA.text = ScaleA.ToString();
+            ScaleCE.text = ScaleE.ToString();
+            Expect.ScaleA = ScaleA;
+            Expect.ScaleE = ScaleE;
+
+
+            Anime();
+            Expect.CalculusTextA();
+            Expect.CalculusTextE();
+            Expect.A();
+        }
+        else
+        {
+            Debug.Log("Lembra de desativar sa porra");
+            AllyConfirm = true;
+            Fight0();
+
+            photonView.RPC("Fight2", RpcTarget.Others);
+
+        }
+
+
+    }
+    public void FightOnline()
+    {
+
+
+        D.Zone[D.p1].ManaSpend = ManaSpendA;
+        D.Zone[D.p2].ManaSpend = ManaSpendE;
         D.DisableA(true);
         for (int x = 0; x < FightAN.Count; x = x + 1)
         {
@@ -117,7 +249,11 @@ public class Combat : MonoBehaviour
 
             Blue[x].SetActive(false);
         }
-        if (o.NexusE.id * o.NexusE.side < 0)
+        //BIBRIRIBRI
+        Debug.Log("CORRIGE SA MERDA");
+
+
+        if (A.Atacante == true)
         {
             Attacking = 1;
         }
@@ -127,20 +263,28 @@ public class Combat : MonoBehaviour
         }
 
 
-        
+
+
+
         FantasyRivals[0].SetActive(true);
         FantasyRivals[1].SetActive(true);
         Dark[1].SetActive(true);
         Dark[0].SetActive(false);
-        Expect.LvA = LvA;
-        Expect.LevelA = LevelA;
-        Expect.OriginalLvA = 0;
-        Expect.OriginalLevelA = LvA + LevelA;
+        //BIRBIRI
+        Expect.ManaSpendA = ManaSpendA;
+        Expect.ManaSpendE = ManaSpendE;
+
+        Expect.ManaA = ManaA;
+        Expect.ManaE = ManaE;
+        Expect.OriginalManaSpendA = 0;
+        Expect.OriginalManaSpendE = 0;
+        Expect.OriginalManaA = ManaSpendA + ManaA;
+        Expect.OriginalManaE = ManaSpendE + ManaE;
         Expect.ScaleA = ScaleA;
         Expect.ScaleE = ScaleE;
-        FantasyRivalsIA.LevelE = LevelE;
-        FantasyRivalsIA.LevelA = LevelA + LvA;
-        FantasyRivalsIA.IA();
+        FantasyRivalsIA.ManE = ManaE;
+        FantasyRivalsIA.ManA = ManaA + ManaSpendA;
+        //FantasyRivalsIA.IA();
 
 
 
@@ -187,6 +331,85 @@ public class Combat : MonoBehaviour
         Expect.CalculusTextA();
         Expect.CalculusTextE();
         Expect.A();
+
+
+    }
+    [PunRPC]
+    public void Fight2()
+    {
+        EnemyConfirm = true;
+        Fight0();
+
+    }
+    public void Fight0()
+    {
+        if (AllyConfirm == true && EnemyConfirm == true)
+        {
+            if (NoRepeatKey == false)
+            {
+                NoRepeatKey = true;
+                photonView.RPC("SendData", RpcTarget.Others, ManaA, SkillIDA, ManaSpendA, ScaleA,F.x1,F.x2,F.x3,F.x4);
+            }
+        }
+    }
+    [PunRPC]
+    public void SendData(int ManaA, int SkillIDA, int ManaSpendA, int ScaleA, int x1, int x2, int x3, int x4 )
+    {
+        if (NoRepeatKey == false)
+        {
+            NoRepeatKey = true;
+            photonView.RPC("SendData", RpcTarget.Others, this.ManaA, this.SkillIDA, this.ManaSpendA, this.ScaleA, F.x1, F.x2, F.x3, F.x4);
+        }
+        Debug.Log("SendData");
+        D.LevelChange(ManaSpendA * -1, false);
+
+
+        F.x5 = x1;
+        F.x6 = x2;
+        F.x7 = x3;
+        F.x8 = x4;
+
+        if (SkillIDA == 1)
+        {
+            F.b5 = 1;
+            F.b6 = 0;
+            F.b7 = 0;
+            F.b8 = 0;
+
+        }
+        if (SkillIDA == 2)
+        {
+            F.b6 = 1;
+            F.b5 = 0;
+            F.b7 = 0;
+            F.b8 = 0;
+        }
+        if (SkillIDA == 3)
+        {
+            F.b7 = 1;
+            F.b5 = 0;
+            F.b6 = 0;
+            F.b8 = 0;
+        }
+        if (SkillIDA == 4)
+        {
+            F.b8 = 1;
+            F.b5 = 0;
+            F.b6 = 0;
+            F.b7 = 0;
+        }
+        ManaSpendE = ManaSpendA;
+        ScaleE = ScaleA;
+        ManaE = ManaA;
+        D.Zone[D.p2].ManaSpend = ManaSpendA;
+        Expect.ManaSpendE = ManaSpendA;
+        Expect.ManaE = ManaA;
+        Expect.OriginalManaE = ManaSpendA + ManaA;
+        Expect.ScaleE = ScaleA;
+        ScaleE = ScaleA;
+        this.ManaE = ManaA;
+        SkillIDE = SkillIDA;
+        FightOnline();
 
     }
     public void Anime()
@@ -382,7 +605,7 @@ public class Combat : MonoBehaviour
                 {
                     UpLevel(1);
                 }
-                    
+
             }
 
         }
@@ -394,7 +617,7 @@ public class Combat : MonoBehaviour
             k = x;
             ExChange(x);
 
-  
+
             if (x10 == 25)//VladAF
             {
                 DownLevel(2, 7);
@@ -403,9 +626,9 @@ public class Combat : MonoBehaviour
 
             if (x20 == 20)//Anivia AR
             {
- 
+
                 DownLevel(3, 6);
-                
+
             }
 
             if (x30 == 17)//Anivia B
@@ -457,7 +680,7 @@ public class Combat : MonoBehaviour
                 {
                     UpAttack(5);
                 }
-                
+
             }
             if (x20 == 24)//FioraAR
             {
@@ -485,7 +708,7 @@ public class Combat : MonoBehaviour
         for (int x = 0; x < 2; x = x + 1)
         {
             k = x;
-  
+
             ExChange(x);
 
             if (x40 == 18)//VladE
@@ -549,7 +772,7 @@ public class Combat : MonoBehaviour
 
             }
 
-            
+
 
 
         }

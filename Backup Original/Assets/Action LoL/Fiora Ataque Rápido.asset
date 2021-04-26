@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: "Fiora Ataque R\xE1pido"
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: cb1aa45130d81744983bf9fe6498e7d4, type: 3}
+  sprite: {fileID: 21300000, guid: f6d1d2c2af765ab43875899c25734b12, type: 3}
   id: 24
   Texto0: 'Passive: Duelist: + 5 Power. Victory: Deals damage equal to your attack
     twice.'

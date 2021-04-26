@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Anivia Ataque Forte
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: ddf19644332aad248a192298dc57487d, type: 3}
+  sprite: {fileID: 21300000, guid: f0b0394437b40104b95552c7aa509610, type: 3}
   id: 23
-  Texto0: 'Passive: -10 Opponent Power (min 20). Victory: Deals 2 true damage to all
-    enemies. Reduce their mana by 1.'
+  Texto0: 'Passive: -10 Opponent Power (min 20). Victory: Deals 2 true damage to
+    all enemies. Reduce their mana by 1.'
   Texto0br: "Vit\xF3ria: Causa 2 de dano verdadeiro a todos os inimigos. Reduza a
     velocidade deles em 1."
   scale: 8

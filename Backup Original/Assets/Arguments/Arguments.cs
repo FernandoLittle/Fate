@@ -30,7 +30,7 @@ public class Arguments : MonoBehaviour
         }
 
 
-        if (a == 4)
+        if (a == 3)
         {
             b1.SetActive(false);
         }

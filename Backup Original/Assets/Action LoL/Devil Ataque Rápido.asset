@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: "Devil Ataque R\xE1pido"
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1efb1bd6ae0083748a9fd9bea2707ac2, type: 3}
+  sprite: {fileID: 21300000, guid: abe128851062966479ea0e013d706d61, type: 3}
   id: 19
   Texto0: 'Passive: Ambush: -5 Opponent Level (min 5). Victory: Deals damage equal
     to your attack. Reduce opponent''s attack by 1.'

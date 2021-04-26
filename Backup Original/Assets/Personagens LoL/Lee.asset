@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3c9d520eb8c454e90046951e1ba5ea, type: 3}
   m_Name: Lee
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 00e51edd3d0ee674e8964ada5ce1aa83, type: 3}
-  sprite1: {fileID: 21300000, guid: 2bb4b48ba9714e54aa9241773f202132, type: 3}
+  sprite: {fileID: 21300000, guid: c42d1f26370be974fb97b328d04b442d, type: 3}
+  sprite1: {fileID: 21300000, guid: c42d1f26370be974fb97b328d04b442d, type: 3}
   id: 25
   idPersonagem: 0
   AtaqueForte: 1a000000

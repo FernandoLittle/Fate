@@ -81,7 +81,7 @@ public class Select : MonoBehaviour
         PlayerPrefs.SetInt("Card4", idL[idList0[0]]);
         PlayerPrefs.SetInt("Card5", idL[idList0[1]]);
         PlayerPrefs.SetInt("Card6", idL[idList0[2]]);
-        SceneManager.LoadScene("Battle");
+        //SceneManager.LoadScene("Battle");
 
     }
 }

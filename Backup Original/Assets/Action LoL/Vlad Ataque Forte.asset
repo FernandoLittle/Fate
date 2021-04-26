@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Vlad Ataque Forte
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 9bbb69accc21c3f48878c0111fd1659d, type: 3}
+  sprite: {fileID: 21300000, guid: c37b54955c92db8479b91936e748018c, type: 3}
   id: 25
-  Texto0: 'Passive: -2 Opponent Level (min 7). Victory: At the end of the round, if
-    you are alive, deal 1 true damage to all nearby enemies for each turn that has
-    passed since this effect was first activated this round.'
+  Texto0: 'Passive: -2 Opponent Level (min 7). Victory: At the end of the round,
+    if you are alive, deal 1 true damage to all nearby enemies for each turn that
+    has passed since this effect was first activated this round.'
   Texto0br: "3- Acerto: No final da rodada, se voc\xEA estiver vivo, causa 1 de dano
     verdadeiro a todos os inimigos pr\xF3ximos para cada turno que se passou desde
     que este efeito foi ativado pela primeira vez neste turno."

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: "Anivia Ataque R\xE1pido"
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1f416273738254f43bac87ee88aabb75, type: 3}
+  sprite: {fileID: 21300000, guid: 39cdd476c65166d449681c1f3acb85f2, type: 3}
   id: 20
   Texto0: 'Passive: -3 Opponent Level (min 6). Victory: Deals damage equal to your
-    attack. If your opponent''s mana is equals to 0, deals damage equal to twice your
-    attack.'
+    attack. If your opponent''s mana is equals to 0, deals damage equal to twice
+    your attack.'
   Texto0br: '4- Acerto: Causa dano igual ao seu ataque. Se a velocidade ou energia
     do oponente for igual a 0, cause dano igual ao dobro do seu ataque.'
   scale: 9

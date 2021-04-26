@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fa3c9ef74419144a1645583b9df078, type: 3}
   m_Name: Kalista Bloqueio
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: febb0246b3ab8b1408272a95b66ced39, type: 3}
+  sprite: {fileID: 21300000, guid: aca9b0ea36bc24a488e0ab198bfc373f, type: 3}
   id: 18
   Texto0: 'Passive: Pact: Copy Opponent Level. Victory: If you have made the pact,
     deals damage equal to your attack and deals damage equal to the attack of the

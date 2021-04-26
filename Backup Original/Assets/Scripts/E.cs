@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class E : MonoBehaviour
+using Photon.Pun;
+using Photon.Realtime;
+public class E : MonoBehaviourPunCallbacks
 {
     public List<B> Zone;
     public A a;
@@ -60,7 +62,7 @@ public class E : MonoBehaviour
     public List<GameObject> DamageAN;
     public List<Text> DamageT;
     public List<GameObject> Stun;
-    public  int turn;
+    public int turn;
     public bool IAbool;
     public Q q;
 
@@ -68,6 +70,14 @@ public class E : MonoBehaviour
     public GameObject Tuto1;
     public D d;
     public int Level;
+    public E MasterE;
+    public E MasterE2;
+    public Button MovB;
+    public Image MovI;
+    public GameObject MovT;
+    public Button FightB;
+    public Image FightI;
+    public GameObject FightT;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,38 +91,42 @@ public class E : MonoBehaviour
     }
     public void A()
     {
+        if (a.offline == false)
+        {
+            MasterE2.photonView.RPC("A1", RpcTarget.Others);
+        }
         
 
         d.Attacking = 1;
 
-        
-
-
-            Izanami.A();
-          
-
-            PlayerPrefs.SetInt("A1", idcard1);
-            PlayerPrefs.SetInt("Rift", idzone1);
-            
 
 
 
-            
-            if (idcard1 > 0)
-            {
-                Zone[idzone2].anime.Play("Z" + idzone2 + "Enemy");
-                Zone[idzone1].anime.Play("Z" + idzone1 + "Ally");
-            }
-            if (idcard1 < 0)
-            {
-                Zone[idzone2].anime.Play("Z" + idzone2 + "Ally");
-                Zone[idzone1].anime.Play("Z" + idzone1 + "Enemy");
-            }
+        Izanami.A();
 
-            PlayerPrefs.SetInt("C", 0);
 
-        
-       
+        PlayerPrefs.SetInt("A1", idcard1);
+        PlayerPrefs.SetInt("Rift", idzone1);
+
+
+
+
+
+        if (idcard1 > 0)
+        {
+            Zone[idzone2].anime.Play("Z" + idzone2 + "Enemy");
+            Zone[idzone1].anime.Play("Z" + idzone1 + "Ally");
+        }
+        if (idcard1 < 0)
+        {
+            Zone[idzone2].anime.Play("Z" + idzone2 + "Ally");
+            Zone[idzone1].anime.Play("Z" + idzone1 + "Enemy");
+        }
+
+        PlayerPrefs.SetInt("C", 0);
+
+
+
         for (int x = 1; x < 11; x = x + 1)
         {
             b[x].enabled = false;
@@ -122,12 +136,21 @@ public class E : MonoBehaviour
         Cancel.SetActive(false);
         //C2.SetActive(true);
         //C1.SetActive(false);
-        Fight.SetActive(false);
+        //Fight.SetActive(false);
+        FightB.enabled = false;
+        FightT.SetActive(false);
+        FightI.enabled = false;
     }
 
     //mov
+
     public void B()
     {
+
+        MasterE.photonView.RPC("B1", RpcTarget.Others);
+
+
+
         Debug.Log("HM");
 
         Zone[idzone2].anime.Play("Normal");
@@ -195,10 +218,13 @@ public class E : MonoBehaviour
         Zone[idzone1].idPersonagem = idPersonagem;
         Zone[idzone2].idcard1 = idcard1;
         Zone[idzone1].idcard1 = idcard2;
+
+
+
         Zonesprite1.sprite = Zonesprite[idzone2].sprite;
 
-        Zonesprite[idzone2].sprite = Zonesprite0.sprite;
-        Zonesprite0.sprite = Zonesprite1.sprite;
+        Zonesprite[idzone2].sprite = Zonesprite[idzone1].sprite;
+        Zonesprite[idzone1].sprite = Zonesprite1.sprite;
         PlayerPrefs.SetInt("A", 0);
         PlayerPrefs.SetInt("B", 0);
 
@@ -282,7 +308,7 @@ public class E : MonoBehaviour
                 Zone[x].select = 0;
 
             }
-            if (Zone[x].idcard1 <= 0 )
+            if (Zone[x].idcard1 <= 0)
             {
                 b[x].enabled = false;
                 Blue[x].SetActive(false);
@@ -295,14 +321,14 @@ public class E : MonoBehaviour
         }
         Guildb[0].enabled = false;
         Guildb[1].enabled = false;
-       // a.E();
-       /* if (a.turn == a.end)
-        {
+        // a.E();
+        /* if (a.turn == a.end)
+         {
 
 
-            a.B();
-        }
-       */
+             a.B();
+         }
+        */
         a.LifeT[idzone1].text = Zone[idzone1].Lyoko[0].ToString();
         a.LifeT[idzone2].text = Zone[idzone2].Lyoko[0].ToString();
 
@@ -366,7 +392,7 @@ public class E : MonoBehaviour
                 Zone[idzone2].Lyoko2[1] += 2;
                 Zone[idzone1].Code[6] = true;
                 a.SetEffectValue(1, idzone1, 2);
-                
+
                 Zone[idzone1].Lyoko[1] += 2;
                 Zone[idzone1].Lyoko2[1] += 2;
             }
@@ -376,16 +402,22 @@ public class E : MonoBehaviour
             //q.A();
             //StartCoroutine("IA");
         }
-       /* if (IAbool == false)
-        {
-            o.A();
-        }
-       */
-        
+        /* if (IAbool == false)
+         {
+             o.A();
+         }
+        */
+
         PlayerPrefs.SetInt("C", 0);
         j[1].idzone1 = idzone1;
         Cancel.SetActive(false);
-        Move.SetActive(false);
+        MovB.enabled=false;
+        MovT.SetActive(false);
+        MovI.enabled = false;
+        FightB.enabled = false;
+        FightT.SetActive(false);
+        FightI.enabled = false;
+        //Move.SetActive(false);
     }
     public void C()
     {
@@ -413,8 +445,14 @@ public class E : MonoBehaviour
         Guildb[0].enabled = false;
         Guildb[1].enabled = false;
         Study.SetActive(false);
-        Fight.SetActive(false);
-        Move.SetActive(false);
+        //Fight.SetActive(false);
+        MovB.enabled = false;
+        MovI.enabled = false;
+        MovT.SetActive(false);
+        FightB.enabled = false;
+        FightT.SetActive(false);
+        FightI.enabled = false;
+        //Move.SetActive(false);
         Cancel.SetActive(false);
     }
     public void D()
@@ -433,7 +471,7 @@ public class E : MonoBehaviour
             Zone[idzone1].up = 1;
         }
         //Zone[idzone1].act -= 1;
-      //  a.ChangeControl();
+        //  a.ChangeControl();
         for (int x = 1; x < 11; x = x + 1)
         {
             if (Zone[x].select == 1)
@@ -442,7 +480,7 @@ public class E : MonoBehaviour
                 Zone[x].select = 0;
 
             }
-            if (Zone[x].idcard1 <= 0 )
+            if (Zone[x].idcard1 <= 0)
             {
                 b[x].enabled = false;
                 Blue[x].SetActive(false);
@@ -477,11 +515,11 @@ public class E : MonoBehaviour
 
             }
         }
-       // a.ChangeControl();
+        // a.ChangeControl();
 
         for (int x = 1; x < 11; x = x + 1)
         {
-            if (Zone[x].idcard1 <= 0 )
+            if (Zone[x].idcard1 <= 0)
             {
                 b[x].enabled = false;
                 Blue[x].SetActive(false);
@@ -500,11 +538,17 @@ public class E : MonoBehaviour
             a.B();
         }
 
-        
+
         Cancel.SetActive(false);
         Study.SetActive(false);
-        Move.SetActive(false);
-        Fight.SetActive(false);
+        MovB.enabled = false;
+        MovI.enabled = false;
+        MovT.SetActive(false);
+        //Move.SetActive(false);
+        //Fight.SetActive(false);
+        FightB.enabled = false;
+        FightT.SetActive(false);
+        FightI.enabled = false;
 
     }
     //Fim do turno
@@ -516,24 +560,352 @@ public class E : MonoBehaviour
 
 
 
-                if (Zone[x].Code[3] == true)
-                {
-                    Zone[x].Lyoko[0] -= 2;
+            if (Zone[x].Code[3] == true)
+            {
+                Zone[x].Lyoko[0] -= 2;
 
-                }
-                if (Zone[x].Counter[2] > 0)
-                {
-                    Zone[x].Counter[2] += 1;
+            }
+            if (Zone[x].Counter[2] > 0)
+            {
+                Zone[x].Counter[2] += 1;
 
-                }
+            }
 
         }
     }
+    [PunRPC]
+    public void B1()
+    {
+
+
+
+
+
+        Debug.Log("HM");
+
+        Zone[idzone2].anime.Play("Normal");
+        Zone[idzone1].anime.Play("Normal");
+        Zone[idzone2].select = 0;
+        Zone[idzone1].select = 0;
+        im11.SetActive(true);
+        im21.SetActive(true);
+        im12.sprite = Zonesprite[idzone1].sprite;
+        im22.sprite = Zonesprite[idzone2].sprite;
+        im13.transform.position = new Vector3(p[idzone1].transform.position.x, p[idzone1].transform.position.y, p[idzone1].transform.position.z);
+        im23.transform.position = new Vector3(p[idzone2].transform.position.x, p[idzone2].transform.position.y, p[idzone2].transform.position.z);
+        if (Zone[idzone1].side == 1)
+        {
+            MoldX.sprite = BlueMold;
+        }
+        if (Zone[idzone2].side == 1)
+        {
+            MoldY.sprite = BlueMold;
+        }
+        if (Zone[idzone1].side == -1)
+        {
+            MoldX.sprite = RedMold;
+        }
+        if (Zone[idzone2].side == -1)
+        {
+            MoldY.sprite = RedMold;
+        }
+        if (Zone[idzone2].idcard1 == 0)
+        {
+            Mold2.SetActive(false);
+        }
+        else
+        {
+            Mold2.SetActive(true);
+        }
+        if (Zone[idzone1].idcard1 == 0)
+        {
+            Mold1.SetActive(false);
+        }
+        else
+        {
+            Mold1.SetActive(true);
+        }
+        j[0].idzone1 = idzone2;
+
+        j[1].idzone1 = idzone1;
+
+        Zone[idzone1].Lyoko.Clear();
+        for (int x = 0; x < Lyoko0.Count; x = x + 1)
+        {
+            Zone[idzone1].Lyoko.Add(Lyoko0[x]);
+        }
+
+
+        Zone[idzone2].Lyoko.Clear();
+        for (int x = 0; x < Lyoko1.Count; x = x + 1)
+        {
+            Zone[idzone2].Lyoko.Add(Lyoko1[x]);
+        }
+
+
+        idPersonagem = Zone[idzone2].idPersonagem;
+        Zone[idzone2].idPersonagem = Zone[idzone1].idPersonagem;
+        Zone[idzone1].idPersonagem = idPersonagem;
+        Zone[idzone2].idcard1 = idcard1;
+        Zone[idzone1].idcard1 = idcard2;
+
+
+
+        Zonesprite1.sprite = Zonesprite[idzone2].sprite;
+
+        Zonesprite[idzone2].sprite = Zonesprite[idzone1].sprite;
+        Zonesprite[idzone1].sprite = Zonesprite1.sprite;
+        PlayerPrefs.SetInt("A", 0);
+        PlayerPrefs.SetInt("B", 0);
+
+        for (int x = 0; x < Code.Count; x = x + 1)
+        {
+            Code[x] = Zone[idzone1].Code[x];
+            Zone[idzone1].Code[x] = Zone[idzone2].Code[x];
+            Zone[idzone2].Code[x] = Code[x];
+        }
+
+        Lyoko2.Clear();
+        for (int x = 0; x < Zone[idzone1].Lyoko2.Count; x = x + 1)
+        {
+            Lyoko2.Add(Zone[idzone1].Lyoko2[x]);
+        }
+        Zone[idzone1].Lyoko2.Clear();
+        for (int x = 0; x < Zone[idzone2].Lyoko2.Count; x = x + 1)
+        {
+            Zone[idzone1].Lyoko2.Add(Zone[idzone2].Lyoko2[x]);
+        }
+        Zone[idzone2].Lyoko2.Clear();
+        for (int x = 0; x < Lyoko2.Count; x = x + 1)
+        {
+            Zone[idzone2].Lyoko2.Add(Lyoko2[x]);
+        }
+
+
+
+
+        Lyoko11.Clear();
+        for (int x = 0; x < Zone[idzone1].Lyoko1.Count; x = x + 1)
+        {
+            Lyoko11.Add(Zone[idzone1].Lyoko1[x]);
+        }
+        Zone[idzone1].Lyoko1.Clear();
+        for (int x = 0; x < Zone[idzone2].Lyoko1.Count; x = x + 1)
+        {
+            Zone[idzone1].Lyoko1.Add(Zone[idzone2].Lyoko1[x]);
+        }
+        Zone[idzone2].Lyoko1.Clear();
+        for (int x = 0; x < Lyoko11.Count; x = x + 1)
+        {
+            Zone[idzone2].Lyoko1.Add(Lyoko11[x]);
+        }
+
+        for (int x = 0; x < Counter.Count; x = x + 1)
+        {
+            Counter[x] = Zone[idzone1].Counter[x];
+            Zone[idzone1].Counter[x] = Zone[idzone2].Counter[x];
+            Zone[idzone2].Counter[x] = Counter[x];
+        }
+        lv = Zone[idzone1].lv;
+        Zone[idzone1].lv = Zone[idzone2].lv;
+        Zone[idzone2].lv = lv;
+
+        up = Zone[idzone1].up;
+        Zone[idzone1].up = Zone[idzone2].up;
+        Zone[idzone2].up = up;
+
+
+
+        Exchange();
+
+
+
+        side = Zone[idzone1].side;
+        Zone[idzone1].side = Zone[idzone2].side;
+        Zone[idzone2].side = side;
+        /*for (int x = 1; x < 11; x = x + 1)
+        {
+            Zone[x].idcard1 *= -1;
+        }
+        Guild[0].id *= -1;
+        Guild[1].id *= -1;
+        */
+        for (int x = 1; x < 11; x = x + 1)
+        {
+            if (Zone[x].select == 1)
+            {
+                Zone[x].anime.Play("b");
+                Zone[x].select = 0;
+
+            }
+            if (Zone[x].idcard1 <= 0)
+            {
+                b[x].enabled = false;
+                Blue[x].SetActive(false);
+            }
+            else
+            {
+                b[x].enabled = true;
+                Blue[x].SetActive(true);
+            }
+        }
+        Guildb[0].enabled = false;
+        Guildb[1].enabled = false;
+        // a.E();
+        /* if (a.turn == a.end)
+         {
+
+
+             a.B();
+         }
+        */
+        a.LifeT[idzone1].text = Zone[idzone1].Lyoko[0].ToString();
+        a.LifeT[idzone2].text = Zone[idzone2].Lyoko[0].ToString();
+
+        if (Zone[idzone1].idcard1 > 0)
+        {
+            MoldB[idzone1].SetActive(true);
+            MoldR[idzone1].SetActive(false);
+        }
+        if (Zone[idzone1].idcard1 < 0)
+        {
+            MoldB[idzone1].SetActive(false);
+            MoldR[idzone1].SetActive(true);
+        }
+        if (Zone[idzone1].idcard1 == 0)
+        {
+            MoldB[idzone1].SetActive(false);
+            MoldR[idzone1].SetActive(false);
+        }
+
+
+        if (Zone[idzone2].idcard1 > 0)
+        {
+            MoldB[idzone2].SetActive(true);
+            MoldR[idzone2].SetActive(false);
+        }
+        if (Zone[idzone2].idcard1 < 0)
+        {
+            MoldB[idzone2].SetActive(false);
+            MoldR[idzone2].SetActive(true);
+        }
+        if (Zone[idzone2].idcard1 == 0)
+        {
+            MoldB[idzone2].SetActive(false);
+            MoldR[idzone2].SetActive(false);
+        }
+        Zone[idzone1].Code[11] = false;
+        Zone[idzone2].Code[11] = false;
+
+        //Teemo Passive
+        /*if (Zone[idzone1].Counter[3] > 0)
+        {
+            Zone[idzone1].Lyoko[0] -= Zone[idzone1].Counter[3];
+
+        }
+        if (Zone[idzone2].Counter[3] > 0)
+        {
+            Zone[idzone2].Lyoko[0] -= Zone[idzone2].Counter[3];
+
+        }*/
+
+        if (Zone[idzone1].Code[8] == true)
+        {
+
+            if (Zone[idzone2].idcard1 != 0)
+            {
+                Zone[idzone1].Code[8] = false;
+                Zone[idzone2].Code[6] = true;
+                IAbool = true;
+                a.SetEffectValue(1, idzone2, 2);
+                Zone[idzone2].Lyoko[1] += 2;
+                Zone[idzone2].Lyoko2[1] += 2;
+                Zone[idzone1].Code[6] = true;
+                a.SetEffectValue(1, idzone1, 2);
+
+                Zone[idzone1].Lyoko[1] += 2;
+                Zone[idzone1].Lyoko2[1] += 2;
+            }
+
+            q.IA = true;
+            //a.Normalizator();
+            //q.A();
+            //StartCoroutine("IA");
+        }
+        /* if (IAbool == false)
+         {
+             o.A();
+         }
+        */
+
+        PlayerPrefs.SetInt("C", 0);
+        j[1].idzone1 = idzone1;
+        Cancel.SetActive(false);
+        MovB.enabled = false;
+        MovI.enabled = false;
+        MovT.SetActive(false);
+        //Move.SetActive(false);
+    }
+    [PunRPC]
+    public void A1()
+    {
+
+        d.Attacking = 0;
+
+
+
+
+        Izanami.A();
+
+
+        PlayerPrefs.SetInt("A1", idcard1);
+        //?
+        PlayerPrefs.SetInt("A", idcard2);
+        PlayerPrefs.SetInt("Rift", idzone1);
+
+
+
+
+
+        if (idcard1 > 0)
+        {
+            Zone[idzone2].anime.Play("Z" + idzone2 + "Enemy");
+            Zone[idzone1].anime.Play("Z" + idzone1 + "Ally");
+        }
+        if (idcard1 < 0)
+        {
+            Zone[idzone2].anime.Play("Z" + idzone2 + "Ally");
+            Zone[idzone1].anime.Play("Z" + idzone1 + "Enemy");
+        }
+
+        PlayerPrefs.SetInt("C", 0);
+
+
+
+        for (int x = 1; x < 11; x = x + 1)
+        {
+            b[x].enabled = false;
+            Blue[x].SetActive(false);
+        }
+
+        Cancel.SetActive(false);
+        //C2.SetActive(true);
+        //C1.SetActive(false);
+        //Fight.SetActive(false);
+        FightB.enabled = false;
+        FightT.SetActive(false);
+        FightI.enabled = false;
+    }
+
+
+
+
+
     public void Exchange()
     {
         Level = Zone[idzone1].Mana;
         Zone[idzone1].Mana = Zone[idzone2].Mana;
-        Zone[idzone2].Mana= Level;
+        Zone[idzone2].Mana = Level;
     }
 
     IEnumerator IA()

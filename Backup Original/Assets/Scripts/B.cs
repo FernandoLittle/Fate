@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class B : MonoBehaviour
+
+public class B : MonoBehaviourPunCallbacks
 {
     public int idcard1;
     public int idcard2;
@@ -76,6 +79,13 @@ public class B : MonoBehaviour
     //Permanent Mana Bonus
     public int Mana2;
     public int ManaSpend;
+    public Button MovB;
+    public Image MovI;
+    public GameObject MovT;
+    public Button FightB;
+    public Image FightI;
+    public GameObject FightT;
+
 
 
     // Start is called before the first frame update
@@ -496,15 +506,25 @@ public class B : MonoBehaviour
                 f.card1 = idcard2;
                 f.card2 = idcard1;
 
-                a.Fight.SetActive(true);
-                Move.SetActive(false);
+                //a.Fight.SetActive(true);
+                FightB.enabled = true;
+                FightT.SetActive(true);
+                FightI.enabled = true;
+                //Move.SetActive(false);
+                MovB.enabled = false;
+                MovI.enabled = false;
+                MovT.SetActive(false);
                 a.Cancel.SetActive(true);
                 Study.SetActive(false);
+
+
                 e2.idcard1 = idcard1;
                 e2.idcard2 = idcard2;
                 e2.idzone1 = idzone1;
                 e2.idzone2 = idzone2;
                 e2.Zonesprite0 = Zonesprite0;
+                a.photonView.RPC("FightNetwork", RpcTarget.Others, idcard1, idcard2, idzone1, idzone2);
+
             }
         }
     }
@@ -520,7 +540,7 @@ public class B : MonoBehaviour
         {
             e.Lyoko0.Add(Lyoko[x]);
         }
-
+        a.photonView.RPC("MoveNetwork0", RpcTarget.Others,idzone1, idcard1);
 
     }
     public void A()
@@ -544,11 +564,14 @@ public class B : MonoBehaviour
         e1.idzone1 = idzone1;
         e1.idzone2 = idzone2;
         e1.Zonesprite0 = Zonesprite0;
-
+        a.photonView.RPC("MoveNetwork", RpcTarget.Others,  idcard1,  idcard2,  idzone1, idzone2);
 
         Study.SetActive(false);
-        Move.SetActive(true);
-        a.Fight.SetActive(false);
+        MovB.enabled = true;
+        MovI.enabled = true;
+        MovT.SetActive(true);
+        //Move.SetActive(true);
+        //a.Fight.SetActive(false);
         Cancel.SetActive(true);
         /*troca de id/troca de sprite
         Zone[idzone2].idcard1 = idcard1;

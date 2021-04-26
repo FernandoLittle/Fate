@@ -98,7 +98,7 @@ public class G : MonoBehaviour
     public void E()
     {
 
-
+        Debug.Log("PA");
             il.SetActive(true);
             il1.sprite = Zonesprite0.sprite;
         il2.SetActive(false);
